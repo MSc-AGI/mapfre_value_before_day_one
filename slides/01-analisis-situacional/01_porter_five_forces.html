@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 2 - Porter's Five Forces</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #F4F6F8;
+  }
+
+  .title-bar {
+    height: 52px;
+    background: #1A2744;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .title-bar h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+  }
+
+  .diagram-area {
+    width: 100%;
+    height: 488px;
+  }
+
+  .slide-number {
+    position: absolute;
+    bottom: 6px;
+    right: 12px;
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="title-bar">
+    <h1>Las Cinco Fuerzas de Porter: Seguros + IA en Europa (2026)</h1>
+  </div>
+  <div class="diagram-area">
+    <svg xmlns="http://www.w3.org/2000/svg" width="960" height="488" viewBox="0 0 960 488">
+      <defs>
+        <marker id="arr-red" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+          <polygon points="0 1, 10 5, 0 9" fill="#C53030"/>
+        </marker>
+        <marker id="arr-purple" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+          <polygon points="0 1, 10 5, 0 9" fill="#805AD5"/>
+        </marker>
+        <marker id="arr-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+          <polygon points="0 1, 10 5, 0 9" fill="#38A169"/>
+        </marker>
+        <marker id="arr-teal" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+          <polygon points="0 1, 10 5, 0 9" fill="#2B7A9B"/>
+        </marker>
+        <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+          <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#000" flood-opacity="0.14"/>
+        </filter>
+        <filter id="sh-lg" x="-3%" y="-3%" width="106%" height="112%">
+          <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity="0.2"/>
+        </filter>
+      </defs>
+
+      <!-- ══ ARROWS ══ -->
+      <line x1="480" y1="112" x2="480" y2="162" stroke="#C53030" stroke-width="3.5" marker-end="url(#arr-red)"/>
+      <line x1="480" y1="440" x2="480" y2="340" stroke="#805AD5" stroke-width="3.5" marker-end="url(#arr-purple)"/>
+      <line x1="222" y1="252" x2="272" y2="252" stroke="#38A169" stroke-width="3.5" marker-end="url(#arr-green)"/>
+      <line x1="738" y1="252" x2="688" y2="252" stroke="#2B7A9B" stroke-width="3.5" marker-end="url(#arr-teal)"/>
+
+      <!-- ══ TOP: Amenaza Nuevos Entrantes ══ -->
+      <rect x="270" y="6" width="420" height="104" rx="10" fill="#C53030" filter="url(#sh)"/>
+      <text x="480" y="32" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="14" font-weight="700" letter-spacing="0.6">AMENAZA NUEVOS ENTRANTES</text>
+      <text x="674" y="32" text-anchor="end" fill="#FED7D7" font-family="Inter, sans-serif" font-size="11" font-weight="600">ALTA</text>
+      <line x1="300" y1="42" x2="660" y2="42" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="480" y="62" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" opacity="0.92">250+ insurtechs activas en España</text>
+      <text x="480" y="80" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" opacity="0.92">Bancassurance: 44% cuota de mercado</text>
+      <text x="480" y="98" text-anchor="middle" fill="#FED7D7" font-family="Inter, sans-serif" font-size="12" font-weight="600">VidaCaixa #1 vida via canal banca</text>
+
+      <!-- ══ LEFT: Poder Proveedores ══ -->
+      <rect x="4" y="162" width="216" height="180" rx="10" fill="#38A169" filter="url(#sh)"/>
+      <text x="112" y="188" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700" letter-spacing="0.4">PODER PROVEEDORES</text>
+      <text x="204" y="188" text-anchor="end" fill="#C6F6D5" font-family="Inter, sans-serif" font-size="10" font-weight="600">ALTA</text>
+      <line x1="24" y1="198" x2="200" y2="198" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="112" y="220" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">AWS · Google</text>
+      <text x="112" y="240" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">Microsoft · Adobe</text>
+      <text x="112" y="260" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">Guidewire · Snowflake</text>
+      <text x="112" y="280" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">Holistic AI (governance)</text>
+      <text x="112" y="306" text-anchor="middle" fill="#C6F6D5" font-family="Inter, sans-serif" font-size="12" font-weight="600">5+ top-tier simultáneos</text>
+      <text x="112" y="326" text-anchor="middle" fill="#C6F6D5" font-family="Inter, sans-serif" font-size="11" font-weight="500">Lock-in riesgo creciente</text>
+
+      <!-- ══ RIGHT: Poder Clientes ══ -->
+      <rect x="740" y="162" width="216" height="180" rx="10" fill="#2B7A9B" filter="url(#sh)"/>
+      <text x="848" y="188" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700" letter-spacing="0.4">PODER CLIENTES</text>
+      <text x="940" y="188" text-anchor="end" fill="#BEE3F8" font-family="Inter, sans-serif" font-size="10" font-weight="600">ALTA</text>
+      <line x1="760" y1="198" x2="936" y2="198" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="848" y="220" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">6M clientes España</text>
+      <text x="848" y="240" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">7 de 10 ya usan AI</text>
+      <text x="848" y="260" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">en su día a día</text>
+      <text x="848" y="284" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">Digital biz +14.6% YoY</text>
+      <text x="848" y="310" text-anchor="middle" fill="#BEE3F8" font-family="Inter, sans-serif" font-size="12" font-weight="600">Expectativa:</text>
+      <text x="848" y="326" text-anchor="middle" fill="#BEE3F8" font-family="Inter, sans-serif" font-size="11" font-weight="600">personalización a escala</text>
+
+      <!-- ══ CENTER: Rivalidad Competitiva ══ -->
+      <rect x="275" y="170" width="410" height="168" rx="12" fill="#1A2744" filter="url(#sh-lg)"/>
+      <rect x="275" y="170" width="410" height="5" rx="2" fill="#3A9DBF"/>
+      <text x="480" y="200" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700" letter-spacing="0.8">RIVALIDAD COMPETITIVA</text>
+      <text x="665" y="200" text-anchor="end" fill="#FEB2B2" font-family="Inter, sans-serif" font-size="11" font-weight="700">MUY ALTA</text>
+      <line x1="310" y1="210" x2="650" y2="210" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+
+      <!-- Maturity scores -->
+      <text x="370" y="244" text-anchor="middle" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="28" font-weight="700">35.5</text>
+      <text x="370" y="262" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="12">MAPFRE</text>
+
+      <text x="480" y="244" text-anchor="middle" fill="#FBD38D" font-family="Inter, sans-serif" font-size="28" font-weight="700">61.5</text>
+      <text x="480" y="262" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="12">Allianz</text>
+
+      <text x="590" y="244" text-anchor="middle" fill="#FBD38D" font-family="Inter, sans-serif" font-size="28" font-weight="700">63</text>
+      <text x="590" y="262" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="12">AXA</text>
+
+      <text x="480" y="290" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" opacity="0.9">Allianz: 900+ use cases en producción</text>
+      <text x="480" y="308" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" opacity="0.9">Nemo (agentic claims) · Incognito (+29% fraude)</text>
+      <text x="480" y="328" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="13" font-weight="700">Gap 1.7x · MAPFRE: 150+ pilots sin escalar</text>
+
+      <!-- ══ BOTTOM: Amenaza Sustitutos ══ -->
+      <rect x="270" y="380" width="420" height="104" rx="10" fill="#805AD5" filter="url(#sh)"/>
+      <text x="480" y="406" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="14" font-weight="700" letter-spacing="0.5">AMENAZA PRODUCTOS SUSTITUTOS</text>
+      <text x="674" y="406" text-anchor="end" fill="#E9D8FD" font-family="Inter, sans-serif" font-size="11" font-weight="600">MEDIA-ALTA</text>
+      <line x1="300" y1="416" x2="660" y2="416" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="480" y="438" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" opacity="0.92">Embedded insurance (Tesla, Amazon)</text>
+      <text x="480" y="458" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" opacity="0.92">Parametric / on-demand · Peer-to-peer (Lemonade)</text>
+      <text x="480" y="476" text-anchor="middle" fill="#E9D8FD" font-family="Inter, sans-serif" font-size="12" font-weight="600">Usage-based insurance (IoT) en crecimiento</text>
+
+      <!-- ══ REGULATORY BAR ══ -->
+      <rect x="4" y="350" width="268" height="34" rx="7" fill="#D69E2E" filter="url(#sh)"/>
+      <text x="138" y="372" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="0.3">PRESIÓN REGULATORIA</text>
+
+      <rect x="688" y="350" width="268" height="34" rx="7" fill="#D69E2E" filter="url(#sh)"/>
+      <text x="822" y="366" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="10.5" font-weight="700">EU AI Act (Ago 2026)</text>
+      <text x="822" y="379" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="9.5" opacity="0.9">GDPR · EIOPA · DGSFP · DORA</text>
+
+    </svg>
+  </div>
+  <span class="slide-number">2 / 8</span>
+</div>
+
+</body>
+</html>

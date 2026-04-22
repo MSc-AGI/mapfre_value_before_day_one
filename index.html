@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAPFRE Espana | AI Strategy Advisory Deck</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia&display=swap');
+
+  :root {
+    --bg-primary: #0F1A2E;
+    --bg-secondary: #1A2744;
+    --bg-card: #1E2D4A;
+    --accent-teal: #3A9DBF;
+    --accent-green: #38A169;
+    --accent-gold: #D69E2E;
+    --accent-purple: #805AD5;
+    --accent-red: #C53030;
+    --text-primary: #FFFFFF;
+    --text-secondary: #8895A7;
+    --text-muted: #718096;
+    --border: #2D3748;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--accent-purple);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 span {
+    color: var(--accent-teal);
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 32px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .meta-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .meta-value {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  /* Navigation */
+  .nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 26, 46, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+
+  .nav-tab {
+    padding: 16px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  .nav-tab:hover {
+    color: var(--text-primary);
+  }
+
+  .nav-tab.active {
+    color: var(--text-primary);
+    border-bottom-color: var(--accent-purple);
+  }
+
+  /* Content */
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  /* Chapter section */
+  .chapter {
+    margin-bottom: 60px;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .chapter-number {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .chapter-number.ch0 { background: var(--accent-teal); color: white; }
+  .chapter-number.ch1 { background: var(--accent-teal); color: white; }
+  .chapter-number.ch2 { background: var(--accent-green); color: white; }
+  .chapter-number.ch3 { background: var(--accent-purple); color: white; }
+
+  .chapter-title {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .chapter-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* Slide grid */
+  .slides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+  }
+
+  .slide-card {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .slide-card:hover {
+    border-color: var(--accent-purple);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  .slide-preview {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slide-preview iframe {
+    width: 960px;
+    height: 540px;
+    border: none;
+    transform-origin: top left;
+    pointer-events: none;
+  }
+
+  .slide-info {
+    padding: 16px 20px;
+  }
+
+  .slide-number {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .slide-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .slide-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Fullscreen viewer */
+  .viewer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.92);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .viewer-overlay.active {
+    display: flex;
+  }
+
+  .viewer-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    background: rgba(15,26,46,0.9);
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+
+  .viewer-btn {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .viewer-btn:hover {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+  }
+
+  .viewer-title {
+    font-size: 14px;
+    color: var(--text-secondary);
+    min-width: 200px;
+    text-align: center;
+  }
+
+  .viewer-frame {
+    width: 90vw;
+    max-width: 1280px;
+    aspect-ratio: 16/9;
+    border: none;
+    border-radius: 4px;
+    background: var(--bg-primary);
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 40px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+  }
+
+  .footer a {
+    color: var(--accent-teal);
+    text-decoration: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 30px; }
+    .hero h1 { font-size: 28px; }
+    .content { padding: 20px; }
+    .slides-grid { grid-template-columns: 1fr; }
+    .nav-tab { padding: 12px 16px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Advisory Proposal</div>
+  <h1>AI Strategy para <span>MAPFRE Espana</span></h1>
+  <p class="hero-subtitle">
+    Proof-of-value deck construido desde fuentes publicas. Analisis de madurez AI,
+    benchmark competitivo, roadmap de 12 meses, y cuantificacion de impacto en P&L.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">Autor</span>
+      <span class="meta-value">Marcelo Caballero</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Audiencia</span>
+      <span class="meta-value">CDO MAPFRE Espana</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Fecha</span>
+      <span class="meta-value">Abril 2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Slides</span>
+      <span class="meta-value">25 slides</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Stack</span>
+      <span class="meta-value">SVG + Playwright + python-pptx</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <div class="nav-tab active" onclick="scrollToChapter('ch-title')">Portada</div>
+    <div class="nav-tab" onclick="scrollToChapter('ch-analisis')">Analisis Situacional</div>
+    <div class="nav-tab" onclick="scrollToChapter('ch-roadmap')">Plan de Ataque</div>
+    <div class="nav-tab" onclick="scrollToChapter('ch-backups')">Back-ups</div>
+  </div>
+</nav>
+
+<!-- Fullscreen viewer -->
+<div class="viewer-overlay" id="viewer">
+  <div class="viewer-controls">
+    <button class="viewer-btn" onclick="navigateSlide(-1)">&#9664; Anterior</button>
+    <span class="viewer-title" id="viewer-title"></span>
+    <button class="viewer-btn" onclick="navigateSlide(1)">Siguiente &#9654;</button>
+    <button class="viewer-btn" onclick="closeViewer()">&#10005; Cerrar</button>
+  </div>
+  <iframe class="viewer-frame" id="viewer-frame"></iframe>
+</div>
+
+<div class="content">
+
+  <!-- PORTADA -->
+  <div class="chapter" id="ch-title">
+    <div class="chapter-header">
+      <span class="chapter-number ch0">PORTADA</span>
+      <span class="chapter-title">Titulo</span>
+    </div>
+    <div class="slides-grid">
+      <a class="slide-card" onclick="openViewer(0)" data-slide="0">
+        <div class="slide-preview" id="preview-0"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 1</div>
+          <div class="slide-title">Portada</div>
+          <div class="slide-desc">AI Strategy Advisory para CDO MAPFRE Espana</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ANALISIS SITUACIONAL -->
+  <div class="chapter" id="ch-analisis">
+    <div class="chapter-header">
+      <span class="chapter-number ch1">CAPITULO 1</span>
+      <span class="chapter-title">Analisis Situacional</span>
+    </div>
+    <p class="chapter-desc">
+      Diagnostico completo del posicionamiento de MAPFRE en AI: fuerzas competitivas,
+      portfolio de use cases, gaps regulatorios, y dinamicas internas de poder.
+    </p>
+    <div class="slides-grid">
+      <a class="slide-card" onclick="openViewer(1)" data-slide="1">
+        <div class="slide-preview" id="preview-1"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 2</div>
+          <div class="slide-title">Divider: Analisis Situacional</div>
+          <div class="slide-desc">Separador de capitulo</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(2)" data-slide="2">
+        <div class="slide-preview" id="preview-2"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 3</div>
+          <div class="slide-title">Porter's Five Forces</div>
+          <div class="slide-desc">Fuerzas competitivas del sector seguros vs AI disruption</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(3)" data-slide="3">
+        <div class="slide-preview" id="preview-3"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 4</div>
+          <div class="slide-title">BCG Growth-Share Matrix</div>
+          <div class="slide-desc">Clasificacion del portfolio AI: Stars, Cash Cows, Question Marks, Dogs</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(4)" data-slide="4">
+        <div class="slide-preview" id="preview-4"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 5</div>
+          <div class="slide-title">5 Vectores de Disrupcion</div>
+          <div class="slide-desc">Pricing, Claims, Fraude, Distribucion, Compliance</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(5)" data-slide="5">
+        <div class="slide-preview" id="preview-5"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 6</div>
+          <div class="slide-title">Cascade Estrategico</div>
+          <div class="slide-desc">De la vision corporativa al plan de ejecucion local</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(6)" data-slide="6">
+        <div class="slide-preview" id="preview-6"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 7</div>
+          <div class="slide-title">Gap Combined Ratio</div>
+          <div class="slide-desc">IBERIA 95.8% vs Grupo 92.2%: el gap de 2.6pp que AI puede cerrar</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(7)" data-slide="7">
+        <div class="slide-preview" id="preview-7"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 8</div>
+          <div class="slide-title">Pilot Purgatory</div>
+          <div class="slide-desc">150+ use cases, 0 en produccion a escala</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(8)" data-slide="8">
+        <div class="slide-preview" id="preview-8"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 9</div>
+          <div class="slide-title">EU AI Act Timeline</div>
+          <div class="slide-desc">Deadline regulatorio Agosto 2026 para high-risk AI systems</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(9)" data-slide="9">
+        <div class="slide-preview" id="preview-9"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 10</div>
+          <div class="slide-title">Bridge Operativo</div>
+          <div class="slide-desc">Gap entre estrategia Group y ejecucion local</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(10)" data-slide="10">
+        <div class="slide-preview" id="preview-10"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 11</div>
+          <div class="slide-title">Fault Line Politica</div>
+          <div class="slide-desc">Dinamica de doble reporte: Group CTDO vs CEO IBERIA</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- PLAN DE ATAQUE -->
+  <div class="chapter" id="ch-roadmap">
+    <div class="chapter-header">
+      <span class="chapter-number ch2">CAPITULO 2</span>
+      <span class="chapter-title">Plan de Ataque</span>
+    </div>
+    <p class="chapter-desc">
+      Roadmap de 12 meses con 5 fases, work packages detallados, deliverables concretos,
+      y cuantificacion del impacto en combined ratio.
+    </p>
+    <div class="slides-grid">
+      <a class="slide-card" onclick="openViewer(11)" data-slide="11">
+        <div class="slide-preview" id="preview-11"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 12</div>
+          <div class="slide-title">Divider: Plan de Ataque</div>
+          <div class="slide-desc">Separador de capitulo</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(12)" data-slide="12">
+        <div class="slide-preview" id="preview-12"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 13</div>
+          <div class="slide-title">Roadmap Overview</div>
+          <div class="slide-desc">Gantt 12 meses con 5 fases + deliverables + EU AI Act transversal</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(13)" data-slide="13">
+        <div class="slide-preview" id="preview-13"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 14</div>
+          <div class="slide-title">Fase 0: Triage del Portfolio AI</div>
+          <div class="slide-desc">De 150+ use cases a clasificacion BCG + Quick Wins</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(14)" data-slide="14">
+        <div class="slide-preview" id="preview-14"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 15</div>
+          <div class="slide-title">Fase 1: Priorizacion P&L</div>
+          <div class="slide-desc">Decision Matrix, EU AI Act risk classification, Baseline Protocol</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(15)" data-slide="15">
+        <div class="slide-preview" id="preview-15"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 16</div>
+          <div class="slide-title">Fase 2: Governance Design</div>
+          <div class="slide-desc">De ad-hoc a governance sistematizado con Decision Rights</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(16)" data-slide="16">
+        <div class="slide-preview" id="preview-16"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 17</div>
+          <div class="slide-title">Fase 3: Cuantificacion</div>
+          <div class="slide-desc">Combined Ratio Bridge (waterfall) + AI P&L Dashboard</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(17)" data-slide="17">
+        <div class="slide-preview" id="preview-17"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 18</div>
+          <div class="slide-title">Fase 4: EU AI Act Readiness</div>
+          <div class="slide-desc">Workstream transversal M1-M12, deadline Agosto 2026</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(18)" data-slide="18">
+        <div class="slide-preview" id="preview-18"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 19</div>
+          <div class="slide-title">Impact Summary</div>
+          <div class="slide-desc">Before/After: Combined Ratio, Portfolio, Governance</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- BACKUPS -->
+  <div class="chapter" id="ch-backups">
+    <div class="chapter-header">
+      <span class="chapter-number ch3">CAPITULO 3</span>
+      <span class="chapter-title">Back-ups</span>
+    </div>
+    <p class="chapter-desc">
+      Material de soporte: organigrama, detalle regulatorio, benchmark competitivo, glosario y fuentes.
+    </p>
+    <div class="slides-grid">
+      <a class="slide-card" onclick="openViewer(19)" data-slide="19">
+        <div class="slide-preview" id="preview-19"></div>
+        <div class="slide-info">
+          <div class="slide-number">Slide 20</div>
+          <div class="slide-title">Divider: Back-ups</div>
+          <div class="slide-desc">Indice de material complementario</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(20)" data-slide="20">
+        <div class="slide-preview" id="preview-20"></div>
+        <div class="slide-info">
+          <div class="slide-number">B1</div>
+          <div class="slide-title">Organigrama MAPFRE</div>
+          <div class="slide-desc">Cadena de mando post-reorganizacion Dic 2025</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(21)" data-slide="21">
+        <div class="slide-preview" id="preview-21"></div>
+        <div class="slide-info">
+          <div class="slide-number">B2</div>
+          <div class="slide-title">EU AI Act Requisitos</div>
+          <div class="slide-desc">Articulos 9, 11, 14: Risk Management, Documentation, Human Oversight</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(22)" data-slide="22">
+        <div class="slide-preview" id="preview-22"></div>
+        <div class="slide-info">
+          <div class="slide-number">B3</div>
+          <div class="slide-title">Benchmark Allianz y AXA</div>
+          <div class="slide-desc">AI Maturity: Allianz 61.5 vs AXA 63 vs MAPFRE 35.5</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(23)" data-slide="23">
+        <div class="slide-preview" id="preview-23"></div>
+        <div class="slide-info">
+          <div class="slide-number">B4</div>
+          <div class="slide-title">Glosario</div>
+          <div class="slide-desc">Combined Ratio, Loss Ratio, Expense Ratio, Pilot Purgatory</div>
+        </div>
+      </a>
+      <a class="slide-card" onclick="openViewer(24)" data-slide="24">
+        <div class="slide-preview" id="preview-24"></div>
+        <div class="slide-info">
+          <div class="slide-number">B5</div>
+          <div class="slide-title">Fuentes y Metodologia</div>
+          <div class="slide-desc">Sources publicas, AI research tools, maturity scoring framework</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <p>Marcelo Caballero &middot; AI Strategy Advisory &middot; Abril 2026</p>
+  <p style="margin-top:8px;">
+    Construido con SVG + <a href="https://playwright.dev" target="_blank">Playwright</a> +
+    <a href="https://python-pptx.readthedocs.io" target="_blank">python-pptx</a> +
+    <a href="https://claude.ai" target="_blank">Claude</a>
+  </p>
+</footer>
+
+<script>
+  // Slide paths in order
+  const slides = [
+    { path: 'slides/00-titulo/00_portada.html', title: 'Portada' },
+    { path: 'slides/01-analisis-situacional/00_divider.html', title: 'Divider: Analisis Situacional' },
+    { path: 'slides/01-analisis-situacional/01_porter_five_forces.html', title: 'Porter Five Forces' },
+    { path: 'slides/01-analisis-situacional/02_bcg_matrix.html', title: 'BCG Growth-Share Matrix' },
+    { path: 'slides/01-analisis-situacional/03_cinco_vectores.html', title: '5 Vectores de Disrupcion' },
+    { path: 'slides/01-analisis-situacional/04_cascade_estrategico.html', title: 'Cascade Estrategico' },
+    { path: 'slides/01-analisis-situacional/05_gap_combined_ratio.html', title: 'Gap Combined Ratio' },
+    { path: 'slides/01-analisis-situacional/06_pilot_purgatory.html', title: 'Pilot Purgatory' },
+    { path: 'slides/01-analisis-situacional/07_eu_ai_act_timeline.html', title: 'EU AI Act Timeline' },
+    { path: 'slides/01-analisis-situacional/08_bridge_operativo.html', title: 'Bridge Operativo' },
+    { path: 'slides/01-analisis-situacional/09_fault_line_politica.html', title: 'Fault Line Politica' },
+    { path: 'slides/02-plan-de-ataque/00_divider.html', title: 'Divider: Plan de Ataque' },
+    { path: 'slides/02-plan-de-ataque/01_roadmap_overview.html', title: 'Roadmap Overview (12 meses)' },
+    { path: 'slides/02-plan-de-ataque/02_fase0_triage.html', title: 'Fase 0: Triage del Portfolio AI' },
+    { path: 'slides/02-plan-de-ataque/03_fase1_priorizacion.html', title: 'Fase 1: Priorizacion P&L' },
+    { path: 'slides/02-plan-de-ataque/04_fase2_governance.html', title: 'Fase 2: Governance Design' },
+    { path: 'slides/02-plan-de-ataque/05_fase3_cuantificacion.html', title: 'Fase 3: Cuantificacion' },
+    { path: 'slides/02-plan-de-ataque/06_fase4_eu_ai_act.html', title: 'Fase 4: EU AI Act Readiness' },
+    { path: 'slides/02-plan-de-ataque/07_impact_summary.html', title: 'Impact Summary' },
+    { path: 'slides/03-backups/00_divider.html', title: 'Divider: Back-ups' },
+    { path: 'slides/03-backups/01_organigrama.html', title: 'B1: Organigrama MAPFRE' },
+    { path: 'slides/03-backups/02_eu_ai_act_requisitos.html', title: 'B2: EU AI Act Requisitos' },
+    { path: 'slides/03-backups/03_benchmark_allianz_axa.html', title: 'B3: Benchmark Allianz y AXA' },
+    { path: 'slides/03-backups/04_glosario.html', title: 'B4: Glosario' },
+    { path: 'slides/03-backups/05_fuentes_metodologia.html', title: 'B5: Fuentes y Metodologia' }
+  ];
+
+  let currentSlide = 0;
+
+  // Load thumbnail previews
+  function loadPreviews() {
+    slides.forEach((slide, i) => {
+      const container = document.getElementById(`preview-${i}`);
+      if (!container) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = slide.path;
+      iframe.loading = 'lazy';
+      // Scale to fit card
+      const containerWidth = container.offsetWidth || 360;
+      const scale = containerWidth / 960;
+      iframe.style.transform = `scale(${scale})`;
+      iframe.style.width = '960px';
+      iframe.style.height = '540px';
+      iframe.style.transformOrigin = 'top left';
+      iframe.style.pointerEvents = 'none';
+      container.appendChild(iframe);
+    });
+  }
+
+  // Viewer
+  function openViewer(index) {
+    currentSlide = index;
+    const viewer = document.getElementById('viewer');
+    const frame = document.getElementById('viewer-frame');
+    const title = document.getElementById('viewer-title');
+    frame.src = slides[index].path;
+    title.textContent = `${index + 1} / ${slides.length}  |  ${slides[index].title}`;
+    viewer.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeViewer() {
+    document.getElementById('viewer').classList.remove('active');
+    document.getElementById('viewer-frame').src = '';
+    document.body.style.overflow = '';
+  }
+
+  function navigateSlide(delta) {
+    const next = currentSlide + delta;
+    if (next >= 0 && next < slides.length) {
+      openViewer(next);
+    }
+  }
+
+  // Keyboard nav
+  document.addEventListener('keydown', (e) => {
+    const viewer = document.getElementById('viewer');
+    if (!viewer.classList.contains('active')) return;
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); navigateSlide(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); navigateSlide(-1); }
+    if (e.key === 'Escape') closeViewer();
+  });
+
+  // Chapter scroll
+  function scrollToChapter(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  // Highlight active nav on scroll
+  const chapters = ['ch-title', 'ch-analisis', 'ch-roadmap', 'ch-backups'];
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = chapters.indexOf(entry.target.id);
+        document.querySelectorAll('.nav-tab').forEach((t, i) => {
+          t.classList.toggle('active', i === idx);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  chapters.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+
+  // Init
+  window.addEventListener('load', loadPreviews);
+</script>
+
+</body>
+</html>

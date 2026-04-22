@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fase 0 - Portfolio Triage</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #0F1A2E;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+    <defs>
+      <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+        <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+      </filter>
+    </defs>
+
+    <!-- Background -->
+    <rect width="960" height="540" fill="#0F1A2E"/>
+    <rect x="0" y="0" width="960" height="4" fill="#3A9DBF"/>
+
+    <!-- TITLE -->
+    <text x="40" y="40" fill="#3A9DBF" font-family="sans-serif" font-size="13" font-weight="bold">FASE 0  |  MESES 1-2</text>
+    <text x="40" y="68" fill="#fff" font-family="Georgia, serif" font-size="24" font-weight="bold">Portfolio Triage: Diagnóstico y Quick Wins</text>
+    <text x="40" y="90" fill="#8895A7" font-family="sans-serif" font-size="12" font-style="italic">Clasificar 150+ use cases para saber qué escalar, qué matar, y qué genera impacto rápido</text>
+
+    <!-- ══ LEFT: THE FUNNEL ══ -->
+    <!-- Input -->
+    <rect x="40" y="110" width="260" height="36" rx="5" fill="#1A2744" filter="url(#sh)"/>
+    <text x="170" y="133" text-anchor="middle" fill="#E2E6EB" font-family="sans-serif" font-size="13" font-weight="bold">150+ use cases (estado actual)</text>
+
+    <!-- Funnel arrow down -->
+    <polygon points="155,150 185,150 170,165" fill="#3A9DBF" opacity="0.6"/>
+
+    <!-- Triage criteria box -->
+    <rect x="40" y="170" width="260" height="100" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="170" width="260" height="4" rx="2" fill="#3A9DBF"/>
+    <text x="55" y="192" fill="#3A9DBF" font-family="sans-serif" font-size="11" font-weight="bold">CRITERIOS DE TRIAGE</text>
+    <text x="55" y="212" fill="#E2E6EB" font-family="sans-serif" font-size="11">1. Impacto estimado en combined ratio</text>
+    <text x="55" y="229" fill="#E2E6EB" font-family="sans-serif" font-size="11">2. Esfuerzo de escalado (tech + org)</text>
+    <text x="55" y="246" fill="#E2E6EB" font-family="sans-serif" font-size="11">3. Riesgo regulatorio (EU AI Act class)</text>
+    <text x="55" y="263" fill="#E2E6EB" font-family="sans-serif" font-size="11">4. Sponsor interno (quién lo defiende)</text>
+
+    <!-- Funnel arrow down -->
+    <polygon points="155,274 185,274 170,289" fill="#3A9DBF" opacity="0.6"/>
+
+    <!-- ══ 4 QUADRANT OUTPUT ══ -->
+    <!-- Stars -->
+    <rect x="40" y="294" width="125" height="62" rx="5" fill="#38A169" filter="url(#sh)"/>
+    <text x="102" y="314" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12" font-weight="bold">STARS</text>
+    <text x="102" y="330" text-anchor="middle" fill="#C6F6D5" font-family="sans-serif" font-size="10">Alto impacto CR</text>
+    <text x="102" y="344" text-anchor="middle" fill="#C6F6D5" font-family="sans-serif" font-size="10">Listos para escalar</text>
+
+    <!-- Cash Cows -->
+    <rect x="175" y="294" width="125" height="62" rx="5" fill="#2B7A9B" filter="url(#sh)"/>
+    <text x="237" y="314" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12" font-weight="bold">CASH COWS</text>
+    <text x="237" y="330" text-anchor="middle" fill="#BEE3F8" font-family="sans-serif" font-size="10">Ya en producción</text>
+    <text x="237" y="344" text-anchor="middle" fill="#BEE3F8" font-family="sans-serif" font-size="10">Mantener + medir</text>
+
+    <!-- Question Marks -->
+    <rect x="40" y="364" width="125" height="62" rx="5" fill="#D69E2E" filter="url(#sh)"/>
+    <text x="102" y="384" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11" font-weight="bold">QUESTION MARKS</text>
+    <text x="102" y="400" text-anchor="middle" fill="#FEFCBF" font-family="sans-serif" font-size="10">Potencial pero sin</text>
+    <text x="102" y="414" text-anchor="middle" fill="#FEFCBF" font-family="sans-serif" font-size="10">datos de impacto</text>
+
+    <!-- Dogs -->
+    <rect x="175" y="364" width="125" height="62" rx="5" fill="#C53030" filter="url(#sh)"/>
+    <text x="237" y="384" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12" font-weight="bold">DOGS</text>
+    <text x="237" y="400" text-anchor="middle" fill="#FED7D7" font-family="sans-serif" font-size="10">Bajo impacto + alto</text>
+    <text x="237" y="414" text-anchor="middle" fill="#FED7D7" font-family="sans-serif" font-size="10">esfuerzo = KILL</text>
+
+    <!-- ══ RIGHT SIDE: Work Packages + Quick Wins ══ -->
+
+    <!-- Work Packages -->
+    <rect x="340" y="110" width="290" height="178" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="340" y="110" width="290" height="4" rx="2" fill="#3A9DBF"/>
+    <text x="355" y="132" fill="#3A9DBF" font-family="sans-serif" font-size="12" font-weight="bold">WORK PACKAGES (Fase 0)</text>
+
+    <text x="355" y="154" fill="#fefcbf" font-family="sans-serif" font-size="11" font-weight="bold">WP 0.1: Inventario</text>
+    <text x="355" y="170" fill="#E2E6EB" font-family="sans-serif" font-size="10">Recoger lista completa de use cases</text>
+    <text x="355" y="184" fill="#8895A7" font-family="sans-serif" font-size="9">Input: equipo Ubaldo (~100 personas)</text>
+
+    <text x="355" y="204" fill="#fefcbf" font-family="sans-serif" font-size="11" font-weight="bold">WP 0.2: Scoring</text>
+    <text x="355" y="220" fill="#E2E6EB" font-family="sans-serif" font-size="10">Evaluar cada use case en 4 criterios</text>
+    <text x="355" y="234" fill="#8895A7" font-family="sans-serif" font-size="9">Input: datos P&amp;L de finanzas + tech owners</text>
+
+    <text x="355" y="254" fill="#fefcbf" font-family="sans-serif" font-size="11" font-weight="bold">WP 0.3: Quick Win Selection</text>
+    <text x="355" y="270" fill="#E2E6EB" font-family="sans-serif" font-size="10">3-5 use cases para escalar en 30 días</text>
+    <text x="355" y="284" fill="#8895A7" font-family="sans-serif" font-size="9">Input: validación con Ubaldo + sponsor</text>
+
+    <!-- Quick Wins Box -->
+    <rect x="340" y="300" width="290" height="126" rx="6" fill="#38A169" opacity="0.15" stroke="#38A169" stroke-width="1.5"/>
+    <text x="355" y="322" fill="#38A169" font-family="sans-serif" font-size="12" font-weight="bold">QUICK WINS: Victoria temprana</text>
+
+    <text x="355" y="344" fill="#E2E6EB" font-family="sans-serif" font-size="11">Objetivo: demostrar impacto medible</text>
+    <text x="355" y="360" fill="#E2E6EB" font-family="sans-serif" font-size="11">en combined ratio dentro del Mes 2.</text>
+
+    <text x="355" y="382" fill="#E2E6EB" font-family="sans-serif" font-size="11">Candidatos típicos:</text>
+    <text x="355" y="398" fill="#C6F6D5" font-family="sans-serif" font-size="11">Fraude (loss ratio) / Claims automation</text>
+    <text x="355" y="414" fill="#C6F6D5" font-family="sans-serif" font-size="11">(expense ratio) / Pricing models</text>
+
+    <!-- ══ FAR RIGHT: Stakeholder Value ══ -->
+    <rect x="650" y="110" width="275" height="130" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="650" y="110" width="275" height="4" rx="2" fill="#D69E2E"/>
+    <text x="665" y="132" fill="#D69E2E" font-family="sans-serif" font-size="12" font-weight="bold">QUÉ GANA CADA STAKEHOLDER</text>
+
+    <text x="665" y="156" fill="#C53030" font-family="sans-serif" font-size="11" font-weight="bold">Elena Sanz (IBERIA):</text>
+    <text x="665" y="172" fill="#E2E6EB" font-family="sans-serif" font-size="11">Visibilidad de qué use cases atacan</text>
+    <text x="665" y="187" fill="#E2E6EB" font-family="sans-serif" font-size="11">su combined ratio + quick wins</text>
+
+    <text x="665" y="210" fill="#2b6cb0" font-family="sans-serif" font-size="11" font-weight="bold">Escrivá (Group):</text>
+    <text x="665" y="226" fill="#E2E6EB" font-family="sans-serif" font-size="11">Inventario clasificado = base para</text>
+    <text x="665" y="241" fill="#E2E6EB" font-family="sans-serif" font-size="11">replicability cross-country</text>
+
+    <!-- Inputs needed box -->
+    <rect x="650" y="256" width="275" height="170" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="650" y="256" width="275" height="4" rx="2" fill="#C53030"/>
+    <text x="665" y="278" fill="#C53030" font-family="sans-serif" font-size="12" font-weight="bold">INPUTS NECESARIOS DE MAPFRE</text>
+
+    <text x="665" y="300" fill="#E2E6EB" font-family="sans-serif" font-size="11">1. Lista completa de use cases</text>
+    <text x="673" y="315" fill="#8895A7" font-family="sans-serif" font-size="10">(nombre, owner, estado, área)</text>
+
+    <text x="665" y="336" fill="#E2E6EB" font-family="sans-serif" font-size="11">2. Datos de P&amp;L por línea de negocio</text>
+    <text x="673" y="351" fill="#8895A7" font-family="sans-serif" font-size="10">(para estimar impacto en CR)</text>
+
+    <text x="665" y="372" fill="#E2E6EB" font-family="sans-serif" font-size="11">3. Acceso a tech owners de cada piloto</text>
+    <text x="673" y="387" fill="#8895A7" font-family="sans-serif" font-size="10">(para evaluar esfuerzo de escalado)</text>
+
+    <text x="665" y="408" fill="#E2E6EB" font-family="sans-serif" font-size="11">4. Tiempo de Ubaldo (sponsor review)</text>
+    <text x="673" y="423" fill="#8895A7" font-family="sans-serif" font-size="10">(validación de clasificación final)</text>
+
+    <!-- ══ BOTTOM: Key Milestone ══ -->
+    <rect x="40" y="442" width="590" height="48" rx="6" fill="#3A9DBF" opacity="0.15" stroke="#3A9DBF" stroke-width="1.5"/>
+    <text x="55" y="464" fill="#3A9DBF" font-family="sans-serif" font-size="13" font-weight="bold">MILESTONE FIN FASE 0:</text>
+    <text x="268" y="464" fill="white" font-family="sans-serif" font-size="13">Portfolio Classification Matrix + 3-5 Quick Wins en ejecución</text>
+    <text x="55" y="482" fill="#8895A7" font-family="sans-serif" font-size="10">Deliverable D1 (Impact Attribution Framework) iniciado. Baseline Protocol (D4) definido.</text>
+
+    <!-- ══ FOOTER ══ -->
+    <rect x="0" y="502" width="960" height="38" fill="rgba(15,26,46,0.95)"/>
+    <text x="40" y="525" fill="#8895A7" font-family="sans-serif" font-size="10">Marcelo Caballero</text>
+    <text x="160" y="525" fill="#4A5568" font-family="sans-serif" font-size="10">|</text>
+    <text x="172" y="525" fill="#8895A7" font-family="sans-serif" font-size="10">Advisory Proposal for CDO MAPFRE Espa&#241;a</text>
+    <text x="920" y="525" text-anchor="end" fill="#4A5568" font-family="sans-serif" font-size="10">22.04.2026</text>
+
+  </svg>
+</div>
+</body>
+</html>

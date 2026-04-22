@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B4 - Glosario</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #0F1A2E;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+    <defs>
+      <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+        <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+      </filter>
+    </defs>
+
+    <rect width="960" height="540" fill="#0F1A2E"/>
+    <rect x="0" y="0" width="960" height="4" fill="#805AD5"/>
+
+    <text x="40" y="40" fill="#805AD5" font-family="sans-serif" font-size="13" font-weight="bold">B4  |  BACK-UP</text>
+    <text x="40" y="66" fill="#fff" font-family="Georgia, serif" font-size="22" font-weight="bold">Glosario de Términos Clave</text>
+
+    <!-- Combined Ratio -->
+    <rect x="40" y="90" width="885" height="90" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="90" width="4" height="90" rx="2" fill="#C53030"/>
+    <text x="60" y="114" fill="#C53030" font-family="sans-serif" font-size="15" font-weight="bold">Combined Ratio</text>
+    <text x="60" y="136" fill="#E2E6EB" font-family="sans-serif" font-size="12">Porcentaje de las primas cobradas que se gasta en siniestros + costes operativos.</text>
+    <text x="60" y="154" fill="#E2E6EB" font-family="sans-serif" font-size="12">Fórmula: Loss Ratio + Expense Ratio. Si es &lt;100%, hay beneficio técnico. Si es &gt;100%, hay pérdida.</text>
+    <text x="60" y="172" fill="#fefcbf" font-family="sans-serif" font-size="11" font-weight="bold">Ejemplo: 95.8% = de cada 100 EUR en primas, se gastan 95.80 EUR. Quedan 4.20 EUR de beneficio.</text>
+
+    <!-- Loss Ratio -->
+    <rect x="40" y="192" width="885" height="80" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="192" width="4" height="80" rx="2" fill="#38A169"/>
+    <text x="60" y="216" fill="#38A169" font-family="sans-serif" font-size="15" font-weight="bold">Loss Ratio (Siniestralidad)</text>
+    <text x="60" y="238" fill="#E2E6EB" font-family="sans-serif" font-size="12">Porcentaje de primas que se destina a pagar siniestros (accidentes, reclamaciones, fraude).</text>
+    <text x="60" y="256" fill="#E2E6EB" font-family="sans-serif" font-size="12">Típicamente 65-75% del combined ratio. Es donde AI tiene mayor impacto directo (fraude, pricing, claims).</text>
+
+    <!-- Expense Ratio -->
+    <rect x="40" y="284" width="885" height="80" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="284" width="4" height="80" rx="2" fill="#3A9DBF"/>
+    <text x="60" y="308" fill="#3A9DBF" font-family="sans-serif" font-size="15" font-weight="bold">Expense Ratio (Gastos Operativos)</text>
+    <text x="60" y="330" fill="#E2E6EB" font-family="sans-serif" font-size="12">Porcentaje de primas que se destina a operar el negocio (salarios, IT, oficinas, comisiones, marketing).</text>
+    <text x="60" y="348" fill="#E2E6EB" font-family="sans-serif" font-size="12">AI reduce este ratio via automatización de procesos, self-service digital, y reducción de time-to-market.</text>
+
+    <!-- Other terms -->
+    <rect x="40" y="376" width="430" height="80" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="376" width="4" height="80" rx="2" fill="#D69E2E"/>
+    <text x="60" y="398" fill="#D69E2E" font-family="sans-serif" font-size="13" font-weight="bold">EU AI Act</text>
+    <text x="60" y="416" fill="#E2E6EB" font-family="sans-serif" font-size="11">Regulación europea (2024/1689) que</text>
+    <text x="60" y="432" fill="#E2E6EB" font-family="sans-serif" font-size="11">clasifica AI systems por nivel de riesgo.</text>
+    <text x="60" y="448" fill="#E2E6EB" font-family="sans-serif" font-size="11">High-risk: compliance obligatorio Ago 2026.</text>
+
+    <rect x="490" y="376" width="435" height="80" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="490" y="376" width="4" height="80" rx="2" fill="#805AD5"/>
+    <text x="510" y="398" fill="#805AD5" font-family="sans-serif" font-size="13" font-weight="bold">Pilot Purgatory</text>
+    <text x="510" y="416" fill="#E2E6EB" font-family="sans-serif" font-size="11">Estado donde una organización tiene muchos</text>
+    <text x="510" y="432" fill="#E2E6EB" font-family="sans-serif" font-size="11">pilotos de AI pero ninguno escala a producción</text>
+    <text x="510" y="448" fill="#E2E6EB" font-family="sans-serif" font-size="11">con impacto real en P&amp;L.</text>
+
+    <!-- Footer -->
+    <rect x="0" y="502" width="960" height="38" fill="rgba(15,26,46,0.95)"/>
+    <text x="40" y="525" fill="#718096" font-family="sans-serif" font-size="9" font-style="italic">Referencia para stakeholders no-técnicos en la audiencia</text>
+
+  </svg>
+</div>
+</body>
+</html>

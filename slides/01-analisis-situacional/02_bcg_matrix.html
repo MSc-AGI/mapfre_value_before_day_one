@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide BCG - MAPFRE AI Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #F4F6F8;
+  }
+
+  .title-bar {
+    height: 52px;
+    background: #1A2744;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .title-bar h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+  }
+
+  .diagram-area {
+    width: 100%;
+    height: 488px;
+  }
+
+  .slide-number {
+    position: absolute;
+    bottom: 6px;
+    right: 12px;
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="title-bar">
+    <h1>Matriz BCG: Portfolio de 150+ Use Cases AI de MAPFRE</h1>
+  </div>
+  <div class="diagram-area">
+    <svg xmlns="http://www.w3.org/2000/svg" width="960" height="488" viewBox="0 0 960 488">
+      <defs>
+        <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+          <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+        </filter>
+        <marker id="axis-arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+          <polygon points="0 1, 8 4, 0 7" fill="#4A5568"/>
+        </marker>
+      </defs>
+
+      <!-- ══ AXES ══ -->
+      <!-- Y axis -->
+      <line x1="100" y1="440" x2="100" y2="18" stroke="#4A5568" stroke-width="2.5" marker-end="url(#axis-arr)"/>
+      <!-- X axis -->
+      <line x1="100" y1="440" x2="690" y2="440" stroke="#4A5568" stroke-width="2.5" marker-end="url(#axis-arr)"/>
+
+      <!-- Y axis label -->
+      <text x="18" y="230" text-anchor="middle" fill="#4A5568" font-family="Inter, sans-serif" font-size="13" font-weight="700" transform="rotate(-90, 18, 230)">IMPACTO ESTRATÉGICO / CRECIMIENTO</text>
+      <text x="50" y="50" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="11">Alto</text>
+      <text x="50" y="430" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="11">Bajo</text>
+
+      <!-- X axis label -->
+      <text x="395" y="478" text-anchor="middle" fill="#4A5568" font-family="Inter, sans-serif" font-size="13" font-weight="700">MADUREZ DE IMPLEMENTACIÓN / POSICIÓN COMPETITIVA</text>
+      <text x="150" y="462" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="11">Baja</text>
+      <text x="640" y="462" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="11">Alta</text>
+
+      <!-- Quadrant dividers (dashed) -->
+      <line x1="395" y1="30" x2="395" y2="440" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="6,4"/>
+      <line x1="100" y1="230" x2="690" y2="230" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+      <!-- ══ QUADRANT BACKGROUNDS ══ -->
+      <!-- Stars (top-right) -->
+      <rect x="396" y="30" width="294" height="200" fill="#F0FFF4" opacity="0.6"/>
+      <!-- Question Marks (top-left) -->
+      <rect x="101" y="30" width="294" height="200" fill="#FFFFF0" opacity="0.6"/>
+      <!-- Cash Cows (bottom-right) -->
+      <rect x="396" y="231" width="294" height="209" fill="#EBF8FF" opacity="0.6"/>
+      <!-- Dogs (bottom-left) -->
+      <rect x="101" y="231" width="294" height="209" fill="#FFF5F5" opacity="0.6"/>
+
+      <!-- ══ QUADRANT LABELS ══ -->
+      <text x="543" y="56" text-anchor="middle" fill="#38A169" font-family="Inter, sans-serif" font-size="18" font-weight="700" opacity="0.35">STARS</text>
+      <text x="248" y="56" text-anchor="middle" fill="#B7791F" font-family="Inter, sans-serif" font-size="18" font-weight="700" opacity="0.35">QUESTION MARKS</text>
+      <text x="543" y="254" text-anchor="middle" fill="#2B6CB0" font-family="Inter, sans-serif" font-size="18" font-weight="700" opacity="0.35">CASH COWS</text>
+      <text x="248" y="254" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="18" font-weight="700" opacity="0.35">DOGS</text>
+
+      <!-- ══ STARS: Top-Right ══ -->
+      <!-- Agentic Claims -->
+      <rect x="420" y="66" width="250" height="52" rx="8" fill="#38A169" filter="url(#sh)"/>
+      <text x="436" y="86" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">Agentic Claims Automation</text>
+      <text x="436" y="103" fill="#C6F6D5" font-family="Inter, sans-serif" font-size="11">Allianz ya en prod (Nemo). Máx impacto combined ratio</text>
+
+      <!-- Fraud Detection AI -->
+      <rect x="440" y="128" width="230" height="52" rx="8" fill="#38A169" filter="url(#sh)"/>
+      <text x="456" y="148" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">Fraud Detection AI</text>
+      <text x="456" y="165" fill="#C6F6D5" font-family="Inter, sans-serif" font-size="11">Allianz Incognito +29%. MAPFRE sin disclosure</text>
+
+      <!-- Adobe Real-Time CDP -->
+      <rect x="410" y="190" width="260" height="32" rx="6" fill="#2F855A" filter="url(#sh)"/>
+      <text x="426" y="211" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Adobe Real-Time CDP (recién lanzada)</text>
+
+      <!-- ══ QUESTION MARKS: Top-Left ══ -->
+      <!-- EU AI Act Compliance -->
+      <rect x="115" y="66" width="260" height="52" rx="8" fill="#B7791F" filter="url(#sh)"/>
+      <text x="131" y="86" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">EU AI Act Compliance</text>
+      <text x="131" y="103" fill="#FEFCBF" font-family="Inter, sans-serif" font-size="11">150+ use cases sin clasificar. Deadline Ago 2026</text>
+
+      <!-- GenAI Underwriting -->
+      <rect x="130" y="128" width="240" height="52" rx="8" fill="#B7791F" filter="url(#sh)"/>
+      <text x="146" y="148" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">GenAI Underwriting / Pricing</text>
+      <text x="146" y="165" fill="#FEFCBF" font-family="Inter, sans-serif" font-size="11">High-risk (Annex III). Alto potencial, baja madurez</text>
+
+      <!-- Accelerators Cross-Country -->
+      <rect x="140" y="190" width="230" height="32" rx="6" fill="#D69E2E" filter="url(#sh)"/>
+      <text x="156" y="211" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Accelerators replicables (28 países)</text>
+
+      <!-- ══ CASH COWS: Bottom-Right ══ -->
+      <!-- MIA GPT -->
+      <rect x="430" y="270" width="240" height="52" rx="8" fill="#2B6CB0" filter="url(#sh)"/>
+      <text x="446" y="290" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">MIA GPT (asistente interno)</text>
+      <text x="446" y="307" fill="#BEE3F8" font-family="Inter, sans-serif" font-size="11">3,000 users · 80% satisfacción · 12 oficinas</text>
+
+      <!-- Automated Document Processing -->
+      <rect x="450" y="332" width="220" height="52" rx="8" fill="#2B6CB0" filter="url(#sh)"/>
+      <text x="466" y="352" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">Document Processing AI</text>
+      <text x="466" y="369" fill="#BEE3F8" font-family="Inter, sans-serif" font-size="11">Operativo, ROI demostrado, escalar</text>
+
+      <!-- Holistic AI Governance -->
+      <rect x="420" y="394" width="250" height="32" rx="6" fill="#3182CE" filter="url(#sh)"/>
+      <text x="436" y="415" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Holistic AI Governance (framework activo)</text>
+
+      <!-- ══ DOGS: Bottom-Left ══ -->
+      <!-- Scattered pilots -->
+      <rect x="115" y="280" width="260" height="52" rx="8" fill="#C53030" filter="url(#sh)"/>
+      <text x="131" y="300" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">~100 pilotos sin ROI medido</text>
+      <text x="131" y="317" fill="#FED7D7" font-family="Inter, sans-serif" font-size="11">Bottom-up orgánico. Sin sponsor. Sin KPIs</text>
+
+      <!-- Legacy analytics -->
+      <rect x="130" y="344" width="240" height="52" rx="8" fill="#C53030" filter="url(#sh)"/>
+      <text x="146" y="364" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">Legacy Analytics / BI Reports</text>
+      <text x="146" y="381" fill="#FED7D7" font-family="Inter, sans-serif" font-size="11">Pre-AI. Sustituibles. Coste de mantenimiento</text>
+
+      <!-- ══ RIGHT PANEL: Diagnosis ══ -->
+      <rect x="705" y="30" width="245" height="410" rx="10" fill="#1A2744" filter="url(#sh)"/>
+      <rect x="705" y="30" width="245" height="5" rx="2" fill="#3A9DBF"/>
+
+      <text x="827" y="58" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="14" font-weight="700">DIAGNÓSTICO</text>
+      <line x1="720" y1="68" x2="935" y2="68" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+
+      <!-- Star icon and text -->
+      <circle cx="725" cy="92" r="6" fill="#38A169"/>
+      <text x="740" y="90" fill="#38A169" font-family="Inter, sans-serif" font-size="12" font-weight="700">Stars (escalar ya)</text>
+      <text x="740" y="106" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="11">Claims + Fraud + CDP</text>
+      <text x="740" y="120" fill="#8895A7" font-family="Inter, sans-serif" font-size="10.5">Máx impacto en combined</text>
+      <text x="740" y="134" fill="#8895A7" font-family="Inter, sans-serif" font-size="10.5">ratio (target 93-94%)</text>
+
+      <line x1="720" y1="148" x2="935" y2="148" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+
+      <circle cx="725" cy="168" r="6" fill="#B7791F"/>
+      <text x="740" y="166" fill="#D69E2E" font-family="Inter, sans-serif" font-size="12" font-weight="700">? Marks (decidir)</text>
+      <text x="740" y="182" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="11">Compliance + UW + Global</text>
+      <text x="740" y="196" fill="#8895A7" font-family="Inter, sans-serif" font-size="10.5">Alto potencial pero requiere</text>
+      <text x="740" y="210" fill="#8895A7" font-family="Inter, sans-serif" font-size="10.5">inversión y decisión ejecutiva</text>
+
+      <line x1="720" y1="224" x2="935" y2="224" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+
+      <circle cx="725" cy="244" r="6" fill="#2B6CB0"/>
+      <text x="740" y="242" fill="#63B3ED" font-family="Inter, sans-serif" font-size="12" font-weight="700">Cash Cows (optimizar)</text>
+      <text x="740" y="258" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="11">MIA GPT + DocAI + Gov</text>
+      <text x="740" y="272" fill="#8895A7" font-family="Inter, sans-serif" font-size="10.5">Funcionan. Escalar de 12</text>
+      <text x="740" y="286" fill="#8895A7" font-family="Inter, sans-serif" font-size="10.5">oficinas a toda la red</text>
+
+      <line x1="720" y1="300" x2="935" y2="300" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+
+      <circle cx="725" cy="320" r="6" fill="#C53030"/>
+      <text x="740" y="318" fill="#FC8181" font-family="Inter, sans-serif" font-size="12" font-weight="700">Dogs (kill / sunset)</text>
+      <text x="740" y="334" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="11">~100 pilotos + legacy BI</text>
+      <text x="740" y="348" fill="#8895A7" font-family="Inter, sans-serif" font-size="10.5">Sin ROI, sin sponsor.</text>
+      <text x="740" y="362" fill="#8895A7" font-family="Inter, sans-serif" font-size="10.5">Liberar recursos para Stars</text>
+
+      <line x1="720" y1="380" x2="935" y2="380" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+
+      <text x="827" y="405" text-anchor="middle" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="12" font-weight="700">El problema no es cantidad.</text>
+      <text x="827" y="422" text-anchor="middle" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Es clasificación y decisión.</text>
+
+    </svg>
+  </div>
+  <span class="slide-number">NEW</span>
+</div>
+
+</body>
+</html>

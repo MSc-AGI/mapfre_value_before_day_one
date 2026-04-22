@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3 - Cinco Vectores de Presión</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #F4F6F8;
+  }
+
+  .title-bar {
+    height: 52px;
+    background: #1A2744;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .title-bar h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+  }
+
+  .diagram-area {
+    width: 100%;
+    height: 488px;
+  }
+
+  .slide-number {
+    position: absolute;
+    bottom: 6px;
+    right: 12px;
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="title-bar">
+    <h1>Cinco Vectores de Presión Convergentes sobre el CDO</h1>
+  </div>
+  <div class="diagram-area">
+    <svg xmlns="http://www.w3.org/2000/svg" width="960" height="488" viewBox="0 0 960 488">
+      <defs>
+        <marker id="arr-blue" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto">
+          <polygon points="0 1, 12 6, 0 11" fill="#2B6CB0"/>
+        </marker>
+        <marker id="arr-red" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto">
+          <polygon points="0 1, 12 6, 0 11" fill="#C53030"/>
+        </marker>
+        <marker id="arr-gold" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto">
+          <polygon points="0 1, 12 6, 0 11" fill="#D69E2E"/>
+        </marker>
+        <marker id="arr-green" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto">
+          <polygon points="0 1, 12 6, 0 11" fill="#38A169"/>
+        </marker>
+        <marker id="arr-purple" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto">
+          <polygon points="0 1, 12 6, 0 11" fill="#805AD5"/>
+        </marker>
+        <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+          <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+        </filter>
+        <filter id="sh-lg" x="-4%" y="-4%" width="108%" height="114%">
+          <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity="0.22"/>
+        </filter>
+      </defs>
+
+      <!-- ══ ARROWS pointing to center ══ -->
+      <!-- V1 Top to center -->
+      <line x1="480" y1="120" x2="480" y2="172" stroke="#2B6CB0" stroke-width="3.5" marker-end="url(#arr-blue)"/>
+      <!-- V2 Left to center -->
+      <line x1="268" y1="176" x2="330" y2="210" stroke="#C53030" stroke-width="3.5" marker-end="url(#arr-red)"/>
+      <!-- V3 Right to center -->
+      <line x1="692" y1="176" x2="630" y2="210" stroke="#D69E2E" stroke-width="3.5" marker-end="url(#arr-gold)"/>
+      <!-- V4 Bottom-left to center -->
+      <line x1="268" y1="370" x2="340" y2="320" stroke="#38A169" stroke-width="3.5" marker-end="url(#arr-green)"/>
+      <!-- V5 Bottom-right to center -->
+      <line x1="692" y1="370" x2="620" y2="320" stroke="#805AD5" stroke-width="3.5" marker-end="url(#arr-purple)"/>
+
+      <!-- ══ CENTER: UBALDO ══ -->
+      <rect x="335" y="185" width="290" height="140" rx="14" fill="#1A2744" filter="url(#sh-lg)"/>
+      <rect x="335" y="185" width="290" height="5" rx="2" fill="#3A9DBF"/>
+      <text x="480" y="220" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="22" font-weight="700">UBALDO</text>
+      <text x="480" y="244" text-anchor="middle" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="14" font-weight="600">CDO MAPFRE España</text>
+      <text x="480" y="268" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="12">~100 personas · 6M clientes · 150+ use cases</text>
+      <text x="480" y="286" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="11" font-style="italic">CDAO of the Year 2025</text>
+      <text x="480" y="312" text-anchor="middle" fill="#CBD5E0" font-family="Inter, sans-serif" font-size="11" font-style="italic">Foco de presiones convergentes</text>
+
+      <!-- ══ V1 TOP: Cascada Jerárquica ══ -->
+      <rect x="300" y="8" width="360" height="110" rx="10" fill="#2B6CB0" filter="url(#sh)"/>
+      <text x="320" y="34" fill="#fff" font-family="Inter, sans-serif" font-size="14" font-weight="700">V1: CASCADA JERÁRQUICA</text>
+      <text x="644" y="34" text-anchor="end" fill="#BEE3F8" font-family="Inter, sans-serif" font-size="11" font-weight="600">PRESIÓN DIRECTA</text>
+      <line x1="318" y1="44" x2="642" y2="44" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="320" y="64" fill="#fff" font-family="Inter, sans-serif" font-size="13" opacity="0.92">CEO Huertas > CTDO Escrivá > CDO Grupo Solanas</text>
+      <text x="320" y="82" fill="#fff" font-family="Inter, sans-serif" font-size="13" opacity="0.92">Plan 2024-26 último año. ROE >13%</text>
+      <text x="320" y="100" fill="#BEE3F8" font-family="Inter, sans-serif" font-size="12" font-weight="600">Accelerators replicables cross-country exigidos</text>
+
+      <!-- ══ V2 LEFT: Competencia ══ -->
+      <rect x="12" y="130" width="254" height="140" rx="10" fill="#C53030" filter="url(#sh)"/>
+      <text x="30" y="156" fill="#fff" font-family="Inter, sans-serif" font-size="14" font-weight="700">V2: COMPETENCIA</text>
+      <text x="248" y="156" text-anchor="end" fill="#FED7D7" font-family="Inter, sans-serif" font-size="11" font-weight="600">GAP 1.7x</text>
+      <line x1="30" y1="166" x2="248" y2="166" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="30" y="186" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">AXA: 63/100 maturity</text>
+      <text x="30" y="204" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">Allianz: 61.5/100</text>
+      <text x="30" y="222" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">MAPFRE: 35.5/100</text>
+      <text x="30" y="244" fill="#FED7D7" font-family="Inter, sans-serif" font-size="12" font-weight="600">Allianz: 900+ use cases prod</text>
+      <text x="30" y="260" fill="#FED7D7" font-family="Inter, sans-serif" font-size="11">Nemo (agentic) · Incognito (+29%)</text>
+
+      <!-- ══ V3 RIGHT: Regulación ══ -->
+      <rect x="694" y="130" width="254" height="140" rx="10" fill="#D69E2E" filter="url(#sh)"/>
+      <text x="712" y="156" fill="#fff" font-family="Inter, sans-serif" font-size="14" font-weight="700">V3: REGULACIÓN</text>
+      <text x="930" y="156" text-anchor="end" fill="#FEFCBF" font-family="Inter, sans-serif" font-size="11" font-weight="600">DEADLINE</text>
+      <line x1="712" y1="166" x2="930" y2="166" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="712" y="186" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">EU AI Act: Ago 2026</text>
+      <text x="712" y="204" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">GDPR · EIOPA · DORA</text>
+      <text x="712" y="222" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">DGSFP supervisión local</text>
+      <text x="712" y="244" fill="#FEFCBF" font-family="Inter, sans-serif" font-size="12" font-weight="600">150+ use cases sin clasificar</text>
+      <text x="712" y="260" fill="#FEFCBF" font-family="Inter, sans-serif" font-size="11">High-risk audit pendiente</text>
+
+      <!-- ══ V4 BOTTOM-LEFT: Clientes ══ -->
+      <rect x="12" y="330" width="254" height="140" rx="10" fill="#38A169" filter="url(#sh)"/>
+      <text x="30" y="356" fill="#fff" font-family="Inter, sans-serif" font-size="14" font-weight="700">V4: CLIENTES</text>
+      <text x="248" y="356" text-anchor="end" fill="#C6F6D5" font-family="Inter, sans-serif" font-size="11" font-weight="600">EXPECTATIVA</text>
+      <line x1="30" y1="366" x2="248" y2="366" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="30" y="386" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">6M clientes MAPFRE España</text>
+      <text x="30" y="404" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">7 de 10 ya usan AI en su día a día</text>
+      <text x="30" y="422" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">Digital business +14.6% YoY</text>
+      <text x="30" y="444" fill="#C6F6D5" font-family="Inter, sans-serif" font-size="12" font-weight="600">Personalización a escala</text>
+      <text x="30" y="460" fill="#C6F6D5" font-family="Inter, sans-serif" font-size="11">Adobe Real-Time CDP recién lanzada</text>
+
+      <!-- ══ V5 BOTTOM-RIGHT: Partners/Vendors ══ -->
+      <rect x="694" y="330" width="254" height="140" rx="10" fill="#805AD5" filter="url(#sh)"/>
+      <text x="712" y="356" fill="#fff" font-family="Inter, sans-serif" font-size="14" font-weight="700">V5: PARTNERS / VENDORS</text>
+      <text x="930" y="356" text-anchor="end" fill="#E9D8FD" font-family="Inter, sans-serif" font-size="11" font-weight="600">COMPLEJIDAD</text>
+      <line x1="712" y1="366" x2="930" y2="366" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="712" y="386" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">AWS · Google · Microsoft</text>
+      <text x="712" y="404" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">Adobe · Guidewire · Snowflake</text>
+      <text x="712" y="422" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" opacity="0.92">Holistic AI (governance)</text>
+      <text x="712" y="444" fill="#E9D8FD" font-family="Inter, sans-serif" font-size="12" font-weight="600">5+ top-tier simultáneos</text>
+      <text x="712" y="460" fill="#E9D8FD" font-family="Inter, sans-serif" font-size="11">Cada uno con su propio roadmap y agenda</text>
+
+      <!-- ══ BOTTOM BAR ══ -->
+      <rect x="300" y="438" width="360" height="42" rx="7" fill="#1A2744" filter="url(#sh)" opacity="0.95"/>
+      <text x="480" y="456" text-anchor="middle" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Cada vector ejerce presión independiente.</text>
+      <text x="480" y="472" text-anchor="middle" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Ubaldo gestiona la intersección.</text>
+
+    </svg>
+  </div>
+  <span class="slide-number">3 / 9</span>
+</div>
+
+</body>
+</html>

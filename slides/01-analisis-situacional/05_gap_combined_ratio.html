@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5 - Gap Competitivo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #F4F6F8;
+  }
+
+  .title-bar {
+    height: 52px;
+    background: #1A2744;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .title-bar h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+  }
+
+  .content {
+    padding: 20px 36px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  thead th {
+    background: #1A2744;
+    color: #fff;
+    font-weight: 700;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+  thead th:first-child {
+    text-align: left;
+    width: 220px;
+  }
+  thead th.mapfre-col {
+    background: #0F1A2E;
+    border-left: 3px solid #3A9DBF;
+    border-right: 3px solid #3A9DBF;
+  }
+
+  tbody td {
+    padding: 13px 16px;
+    text-align: center;
+    border-bottom: 1px solid #E2E6EB;
+    background: #fff;
+    font-size: 13.5px;
+    color: #4A5568;
+  }
+  tbody td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #1A2744;
+    font-size: 13px;
+  }
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  td.peer { background: #F0FFF4; color: #276749; font-weight: 500; }
+  td.mapfre { background: #FFF5F5; color: #C53030; font-weight: 600; border-left: 3px solid #3A9DBF; border-right: 3px solid #3A9DBF; }
+  td.gap-red { background: #FFF5F5; color: #C53030; font-weight: 700; font-size: 14px; }
+  td.gap-amber { background: #FFFFF0; color: #B7791F; font-weight: 700; }
+
+  .insight-bar {
+    position: absolute;
+    bottom: 14px;
+    left: 36px;
+    right: 36px;
+    background: #1A2744;
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-size: 13px;
+    color: #E2E6EB;
+    line-height: 1.6;
+  }
+  .insight-bar strong { color: #3A9DBF; }
+
+  .slide-number {
+    position: absolute;
+    bottom: 6px;
+    right: 12px;
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="title-bar">
+    <h1>Gap Competitivo: MAPFRE vs Peers Europeos</h1>
+  </div>
+  <div class="content">
+    <table>
+      <thead>
+        <tr>
+          <th>Métrica</th>
+          <th>Allianz</th>
+          <th>AXA</th>
+          <th class="mapfre-col">MAPFRE</th>
+          <th>Gap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AI Maturity Score</td>
+          <td class="peer">61.5 / 100</td>
+          <td class="peer">63 / 100</td>
+          <td class="mapfre">35.5 / 100</td>
+          <td class="gap-red">1.7x</td>
+        </tr>
+        <tr>
+          <td>Use Cases en Producción</td>
+          <td class="peer">900+</td>
+          <td>N/D</td>
+          <td class="mapfre">150+ (pilots)</td>
+          <td class="gap-red">6x</td>
+        </tr>
+        <tr>
+          <td>Agentic AI (Claims)</td>
+          <td class="peer">Project Nemo (prod)</td>
+          <td>N/D</td>
+          <td class="mapfre">Architecture Design</td>
+          <td class="gap-red">2+ años</td>
+        </tr>
+        <tr>
+          <td>Fraud Detection AI</td>
+          <td class="peer">Incognito (+29%)</td>
+          <td class="peer">AI Digital Risk Eng.</td>
+          <td class="mapfre">No disclosure</td>
+          <td class="gap-amber">?</td>
+        </tr>
+        <tr>
+          <td>GenAI Interno</td>
+          <td class="peer">Enterprise-wide</td>
+          <td class="peer">Enterprise-wide</td>
+          <td class="mapfre">MIA GPT (3k users)</td>
+          <td class="gap-amber">Scale</td>
+        </tr>
+        <tr>
+          <td>Combined Ratio (IBERIA)</td>
+          <td>93.1%</td>
+          <td>92.8%</td>
+          <td class="mapfre">95.8%</td>
+          <td class="gap-red">+2.7pp</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insight-bar">
+    <strong>El gap no es de ambición.</strong> MAPFRE tiene 150+ iniciativas pero la mayoría son pilotos localizados. Allianz ya opera con autonomous multi-agent claims en producción. El problema es de escalado y priorización, no de ideas.
+  </div>
+  <span class="slide-number">5 / 9</span>
+</div>
+
+</body>
+</html>

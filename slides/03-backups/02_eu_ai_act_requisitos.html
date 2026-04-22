@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2 - EU AI Act Requisitos</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #0F1A2E;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+    <defs>
+      <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+        <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+      </filter>
+    </defs>
+
+    <rect width="960" height="540" fill="#0F1A2E"/>
+    <rect x="0" y="0" width="960" height="4" fill="#805AD5"/>
+
+    <text x="40" y="40" fill="#805AD5" font-family="sans-serif" font-size="13" font-weight="bold">B2  |  BACK-UP</text>
+    <text x="40" y="66" fill="#fff" font-family="Georgia, serif" font-size="22" font-weight="bold">EU AI Act: Requisitos Clave para High-Risk AI Systems</text>
+    <text x="40" y="86" fill="#8895A7" font-family="sans-serif" font-size="11" font-style="italic">Aplicable desde Agosto 2026. Seguros = sector high-risk por defecto (Annex III).</text>
+
+    <!-- Article 9: Risk Management -->
+    <rect x="40" y="104" width="885" height="110" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="104" width="4" height="110" rx="2" fill="#C53030"/>
+    <text x="60" y="126" fill="#C53030" font-family="sans-serif" font-size="14" font-weight="bold">Artículo 9: Risk Management System</text>
+    <text x="60" y="146" fill="#E2E6EB" font-family="sans-serif" font-size="11">Obligatorio establecer un sistema de gestión de riesgos continuo durante todo el ciclo de vida del AI system.</text>
+    <text x="60" y="164" fill="#E2E6EB" font-family="sans-serif" font-size="11">Incluye: identificación de riesgos, estimación, evaluación, y medidas de mitigación.</text>
+    <text x="60" y="182" fill="#E2E6EB" font-family="sans-serif" font-size="11">Requisito de testing con datos representativos antes de market placement y durante operación.</text>
+    <text x="60" y="200" fill="#fefcbf" font-family="sans-serif" font-size="10" font-weight="bold">Impacto MAPFRE: Cada use case de pricing, claims, fraud necesita risk assessment documentado.</text>
+
+    <!-- Article 11: Technical Documentation -->
+    <rect x="40" y="224" width="885" height="110" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="224" width="4" height="110" rx="2" fill="#D69E2E"/>
+    <text x="60" y="246" fill="#D69E2E" font-family="sans-serif" font-size="14" font-weight="bold">Artículo 11: Technical Documentation</text>
+    <text x="60" y="266" fill="#E2E6EB" font-family="sans-serif" font-size="11">Documentación técnica completa antes de market placement, actualizada continuamente.</text>
+    <text x="60" y="284" fill="#E2E6EB" font-family="sans-serif" font-size="11">Incluye: descripción del sistema, design specs, desarrollo, training data, testing, validación.</text>
+    <text x="60" y="302" fill="#E2E6EB" font-family="sans-serif" font-size="11">Debe demostrar conformidad con todos los requisitos del Capítulo 2 del EU AI Act.</text>
+    <text x="60" y="320" fill="#fefcbf" font-family="sans-serif" font-size="10" font-weight="bold">Impacto MAPFRE: 150+ use cases sin documentación estandarizada = gap masivo.</text>
+
+    <!-- Article 14: Human Oversight -->
+    <rect x="40" y="344" width="885" height="110" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="344" width="4" height="110" rx="2" fill="#3A9DBF"/>
+    <text x="60" y="366" fill="#3A9DBF" font-family="sans-serif" font-size="14" font-weight="bold">Artículo 14: Human Oversight</text>
+    <text x="60" y="386" fill="#E2E6EB" font-family="sans-serif" font-size="11">High-risk AI systems deben diseñarse para ser supervisados por personas naturales.</text>
+    <text x="60" y="404" fill="#E2E6EB" font-family="sans-serif" font-size="11">El operador debe poder: entender las capacidades del sistema, interpretar outputs, decidir no usar</text>
+    <text x="60" y="420" fill="#E2E6EB" font-family="sans-serif" font-size="11">el output, e intervenir o parar el sistema en cualquier momento.</text>
+    <text x="60" y="440" fill="#fefcbf" font-family="sans-serif" font-size="10" font-weight="bold">Impacto MAPFRE: Claims automation y pricing models necesitan "human in the loop" documentado.</text>
+
+    <!-- Sanctions bar -->
+    <rect x="40" y="464" width="885" height="30" rx="4" fill="#C53030" opacity="0.15"/>
+    <text x="480" y="484" text-anchor="middle" fill="#FED7D7" font-family="sans-serif" font-size="12" font-weight="bold">Sanciones: hasta 35M EUR o 7% del revenue global. Obligación de apagar sistemas no conformes.</text>
+
+    <!-- Footer -->
+    <rect x="0" y="502" width="960" height="38" fill="rgba(15,26,46,0.95)"/>
+    <text x="40" y="525" fill="#718096" font-family="sans-serif" font-size="9" font-style="italic">Fuente: Regulation (EU) 2024/1689 (EU AI Act) | EIOPA guidelines on AI governance in insurance</text>
+
+  </svg>
+</div>
+</body>
+</html>

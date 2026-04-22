@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4 - Cascada Jerárquica</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #F4F6F8;
+  }
+
+  .title-bar {
+    height: 52px;
+    background: #1A2744;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .title-bar h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+  }
+
+  .diagram-area {
+    width: 100%;
+    height: 488px;
+  }
+
+  .slide-number {
+    position: absolute;
+    bottom: 6px;
+    right: 12px;
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="title-bar">
+    <h1>Cascada Jerárquica: La Presión Baja Nivel a Nivel</h1>
+  </div>
+  <div class="diagram-area">
+    <svg xmlns="http://www.w3.org/2000/svg" width="960" height="488" viewBox="0 0 960 488">
+      <defs>
+        <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+          <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+        </filter>
+        <marker id="arr-down" markerWidth="6" markerHeight="6" refX="3" refY="5" orient="auto">
+          <polygon points="0 0, 6 0, 3 6" fill="#8895A7"/>
+        </marker>
+      </defs>
+
+      <!-- ══ ROW 1: Board + CEO Huertas ══ -->
+      <rect x="24" y="12" width="220" height="88" rx="10" fill="#0F1A2E" filter="url(#sh)"/>
+      <text x="134" y="38" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="15" font-weight="700">Board + CEO</text>
+      <text x="134" y="58" text-anchor="middle" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="13" font-weight="600">Antonio Huertas</text>
+      <text x="134" y="78" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="11">Chairman & CEO</text>
+
+      <rect x="264" y="12" width="684" height="88" rx="10" fill="#FFFFFF" filter="url(#sh)"/>
+      <text x="284" y="36" fill="#1A2744" font-family="Inter, sans-serif" font-size="13" font-weight="700">Mandato:</text>
+      <text x="354" y="36" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">ROE >13%, Combined Ratio objetivo 93-94%</text>
+      <text x="284" y="56" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">Record beneficio 1.079B (2024). Último año Plan Estratégico 2024-2026</text>
+      <text x="284" y="78" fill="#C53030" font-family="Inter, sans-serif" font-size="13" font-weight="600">"Justificad la inversión en AI con resultados medibles."</text>
+
+      <!-- Arrow 1>2 -->
+      <polygon points="128,105 140,105 134,117" fill="#8895A7"/>
+      <!-- Pressure accumulator -->
+      <rect x="880" y="14" width="60" height="84" rx="6" fill="#C53030" opacity="0.12"/>
+      <text x="910" y="50" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="10" font-weight="700">PRESIÓN</text>
+      <text x="910" y="68" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="18" font-weight="700">1x</text>
+
+      <!-- ══ ROW 2: CTDO Vanessa Escrivá ══ -->
+      <rect x="24" y="122" width="220" height="88" rx="10" fill="#2B6CB0" filter="url(#sh)"/>
+      <text x="134" y="148" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="15" font-weight="700">CTDO</text>
+      <text x="134" y="168" text-anchor="middle" fill="#BEE3F8" font-family="Inter, sans-serif" font-size="13" font-weight="600">Vanessa Escrivá</text>
+      <text x="134" y="188" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="11">Chief Tech & Data Officer</text>
+
+      <rect x="264" y="122" width="684" height="88" rx="10" fill="#FFFFFF" filter="url(#sh)"/>
+      <text x="284" y="146" fill="#1A2744" font-family="Inter, sans-serif" font-size="13" font-weight="700">Mandato:</text>
+      <text x="354" y="146" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">Demostrar que centralizar Tech+Data+AI genera resultados</text>
+      <text x="284" y="166" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">Función nueva (Ene 2026). Accelerators replicables cross-country</text>
+      <text x="284" y="188" fill="#C53030" font-family="Inter, sans-serif" font-size="13" font-weight="600">Presión heredada del Board + presión propia de demostrar la nueva función</text>
+
+      <!-- Arrow 2>3 -->
+      <polygon points="128,215 140,215 134,227" fill="#8895A7"/>
+      <rect x="880" y="124" width="60" height="84" rx="6" fill="#C53030" opacity="0.2"/>
+      <text x="910" y="160" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="10" font-weight="700">PRESIÓN</text>
+      <text x="910" y="178" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="18" font-weight="700">2x</text>
+
+      <!-- ══ ROW 3: CDO Grupo Maribel Solanas ══ -->
+      <rect x="24" y="232" width="220" height="88" rx="10" fill="#3A7BC8" filter="url(#sh)"/>
+      <text x="134" y="258" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="15" font-weight="700">CDO Grupo</text>
+      <text x="134" y="278" text-anchor="middle" fill="#BEE3F8" font-family="Inter, sans-serif" font-size="13" font-weight="600">Maribel Solanas</text>
+      <text x="134" y="298" text-anchor="middle" fill="#d4e6f6" font-family="Inter, sans-serif" font-size="11">Chief Data Officer Group</text>
+
+      <rect x="264" y="232" width="684" height="88" rx="10" fill="#FFFFFF" filter="url(#sh)"/>
+      <text x="284" y="256" fill="#1A2744" font-family="Inter, sans-serif" font-size="13" font-weight="700">Mandato:</text>
+      <text x="354" y="256" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">AI Manifesto público (primera IBEX 35). Governance con Holistic AI</text>
+      <text x="284" y="276" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">Cada use case debe pasar filtro ético + compliance EU AI Act</text>
+      <text x="284" y="298" fill="#C53030" font-family="Inter, sans-serif" font-size="13" font-weight="600">Presión acumulada + exigencia de governance sin frenar velocidad</text>
+
+      <!-- Arrow 3>4 -->
+      <polygon points="128,325 140,325 134,337" fill="#8895A7"/>
+      <rect x="880" y="234" width="60" height="84" rx="6" fill="#C53030" opacity="0.32"/>
+      <text x="910" y="270" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="10" font-weight="700">PRESIÓN</text>
+      <text x="910" y="288" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="18" font-weight="700">3x</text>
+
+      <!-- ══ ROW 4: CDO España UBALDO ══ -->
+      <rect x="24" y="342" width="220" height="96" rx="10" fill="#1A2744" filter="url(#sh)"/>
+      <rect x="24" y="342" width="220" height="5" rx="2" fill="#3A9DBF"/>
+      <text x="134" y="372" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="17" font-weight="700">CDO España</text>
+      <text x="134" y="394" text-anchor="middle" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="14" font-weight="600">Ubaldo González</text>
+      <text x="134" y="416" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="11">CDAO of the Year 2025</text>
+
+      <rect x="264" y="342" width="684" height="96" rx="10" fill="#FFFFFF" filter="url(#sh)"/>
+      <rect x="264" y="342" width="4" height="96" rx="2" fill="#C53030"/>
+      <text x="284" y="366" fill="#1A2744" font-family="Inter, sans-serif" font-size="13" font-weight="700">Absorbe toda la presión acumulada:</text>
+      <text x="284" y="388" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">150+ use cases · ~100 personas · 6M clientes · Pilot purgatory</text>
+      <text x="284" y="408" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">EU AI Act audit pendiente · Adobe CDP recién lanzada · MIA GPT escalar</text>
+      <text x="284" y="428" fill="#C53030" font-family="Inter, sans-serif" font-size="13" font-weight="600">Reputación en juego post-premio CDAO of the Year 2025</text>
+
+      <rect x="880" y="344" width="60" height="92" rx="6" fill="#C53030" opacity="0.5"/>
+      <text x="910" y="380" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="10" font-weight="700">PRESIÓN</text>
+      <text x="910" y="400" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="22" font-weight="700">4x</text>
+      <text x="910" y="418" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="9" font-weight="600">ACUMULADA</text>
+
+      <!-- ══ BOTTOM INSIGHT BAR ══ -->
+      <rect x="24" y="450" width="916" height="32" rx="7" fill="#1A2744"/>
+      <text x="480" y="471" text-anchor="middle" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="13" font-weight="700">Cada nivel traduce la presión del superior y añade la propia. El CDO España absorbe la presión acumulada de toda la cadena.</text>
+
+    </svg>
+  </div>
+  <span class="slide-number">4 / 9</span>
+</div>
+
+</body>
+</html>

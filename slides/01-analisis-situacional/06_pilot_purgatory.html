@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6 - Pilot Purgatory</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #F4F6F8;
+  }
+
+  .title-bar {
+    height: 52px;
+    background: #1A2744;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .title-bar h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 19px;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+  }
+
+  .diagram-area {
+    width: 100%;
+    height: 488px;
+  }
+
+  .slide-number {
+    position: absolute;
+    bottom: 6px;
+    right: 12px;
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="title-bar">
+    <h1>Pilot Purgatory: De 150+ Use Cases a Accelerators Escalables</h1>
+  </div>
+  <div class="diagram-area">
+    <svg xmlns="http://www.w3.org/2000/svg" width="960" height="488" viewBox="0 0 960 488">
+      <defs>
+        <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+          <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+        </filter>
+        <marker id="arr-r" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+          <polygon points="0 1, 10 5, 0 9" fill="#2B7A9B"/>
+        </marker>
+      </defs>
+
+      <!-- ══ LEFT PANEL: Estado Actual ══ -->
+      <rect x="24" y="10" width="390" height="370" rx="10" fill="#FFFFFF" filter="url(#sh)"/>
+      <rect x="24" y="10" width="390" height="46" rx="10" fill="#C53030"/>
+      <rect x="24" y="36" width="390" height="20" fill="#C53030"/>
+      <text x="219" y="40" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700">ESTADO ACTUAL</text>
+
+      <text x="48" y="82" fill="#1A2744" font-family="Inter, sans-serif" font-size="14" font-weight="700">150+ use cases en el AI Center</text>
+
+      <circle cx="48" cy="110" r="4" fill="#C53030"/>
+      <text x="62" y="115" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">Sin framework de priorización</text>
+
+      <circle cx="48" cy="140" r="4" fill="#C53030"/>
+      <text x="62" y="145" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">Uso orgánico bottom-up, no top-down</text>
+
+      <circle cx="48" cy="170" r="4" fill="#C53030"/>
+      <text x="62" y="175" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">MIA GPT: 3,000 users / 80% satisfacción</text>
+      <text x="62" y="193" fill="#8895A7" font-family="Inter, sans-serif" font-size="12">pero solo 12 oficinas de toda la red</text>
+
+      <circle cx="48" cy="218" r="4" fill="#C53030"/>
+      <text x="62" y="223" fill="#C53030" font-family="Inter, sans-serif" font-size="13" font-weight="600">Sin audit EU AI Act de use cases</text>
+
+      <circle cx="48" cy="248" r="4" fill="#C53030"/>
+      <text x="62" y="253" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">ROI sin estandarizar cross-portfolio</text>
+
+      <circle cx="48" cy="278" r="4" fill="#C53030"/>
+      <text x="62" y="283" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">~100 pilotos sin sponsor ejecutivo</text>
+
+      <!-- Verdict box -->
+      <rect x="40" y="306" width="358" height="60" rx="6" fill="#FFF5F5" stroke="#C53030" stroke-width="1"/>
+      <text x="219" y="330" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="14" font-weight="700">Portfolio denso, fragmentado,</text>
+      <text x="219" y="350" text-anchor="middle" fill="#C53030" font-family="Inter, sans-serif" font-size="14" font-weight="700">sin mecanismo de kill/scale/redesign</text>
+
+      <!-- ══ CENTER ARROW ══ -->
+      <line x1="424" y1="195" x2="530" y2="195" stroke="#2B7A9B" stroke-width="3.5" marker-end="url(#arr-r)"/>
+      <text x="480" y="178" text-anchor="middle" fill="#2B7A9B" font-family="Inter, sans-serif" font-size="28" font-weight="700">?</text>
+
+      <!-- ══ RIGHT PANEL: Estado Objetivo ══ -->
+      <rect x="546" y="10" width="390" height="370" rx="10" fill="#FFFFFF" filter="url(#sh)"/>
+      <rect x="546" y="10" width="390" height="46" rx="10" fill="#38A169"/>
+      <rect x="546" y="36" width="390" height="20" fill="#38A169"/>
+      <text x="741" y="40" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700">ESTADO OBJETIVO</text>
+
+      <text x="570" y="82" fill="#1A2744" font-family="Inter, sans-serif" font-size="14" font-weight="700">Portfolio priorizado por P&L impact</text>
+
+      <circle cx="570" cy="110" r="4" fill="#38A169"/>
+      <text x="584" y="115" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">Accelerators replicables cross-country</text>
+
+      <circle cx="570" cy="140" r="4" fill="#38A169"/>
+      <text x="584" y="145" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">Framework kill / scale / redesign por use case</text>
+
+      <circle cx="570" cy="170" r="4" fill="#38A169"/>
+      <text x="584" y="175" fill="#38A169" font-family="Inter, sans-serif" font-size="13" font-weight="600">EU AI Act: clasificación high/limited/minimal</text>
+      <text x="584" y="193" fill="#8895A7" font-family="Inter, sans-serif" font-size="12">completada antes de Ago 2026</text>
+
+      <circle cx="570" cy="218" r="4" fill="#38A169"/>
+      <text x="584" y="223" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">ROI medible vinculado a combined ratio</text>
+
+      <circle cx="570" cy="248" r="4" fill="#38A169"/>
+      <text x="584" y="253" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">Blueprint modular para 28 países</text>
+
+      <circle cx="570" cy="278" r="4" fill="#38A169"/>
+      <text x="584" y="283" fill="#4A5568" font-family="Inter, sans-serif" font-size="13">MIA GPT escalado a toda la red</text>
+
+      <!-- Verdict box -->
+      <rect x="562" y="306" width="358" height="60" rx="6" fill="#F0FFF4" stroke="#38A169" stroke-width="1"/>
+      <text x="741" y="330" text-anchor="middle" fill="#276749" font-family="Inter, sans-serif" font-size="14" font-weight="700">Portfolio gestionado como producto:</text>
+      <text x="741" y="350" text-anchor="middle" fill="#276749" font-family="Inter, sans-serif" font-size="14" font-weight="700">medido, priorizado, escalado</text>
+
+      <!-- ══ BOTTOM BAR: Combined Ratio ══ -->
+      <rect x="24" y="394" width="912" height="86" rx="8" fill="#1A2744"/>
+      <text x="480" y="420" text-anchor="middle" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="15" font-weight="700">La métrica que importa: Combined Ratio</text>
+      <line x1="48" y1="432" x2="912" y2="432" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+
+      <!-- CR visual bar -->
+      <text x="80" y="456" fill="#8895A7" font-family="Inter, sans-serif" font-size="12" font-weight="600">IBERIA</text>
+      <rect x="150" y="444" width="340" height="20" rx="4" fill="#C53030" opacity="0.8"/>
+      <text x="500" y="459" fill="#FED7D7" font-family="Inter, sans-serif" font-size="13" font-weight="700">95.8%</text>
+
+      <text x="580" y="456" fill="#8895A7" font-family="Inter, sans-serif" font-size="12" font-weight="600">Target</text>
+      <rect x="640" y="444" width="200" height="20" rx="4" fill="#38A169" opacity="0.8"/>
+      <text x="850" y="459" fill="#C6F6D5" font-family="Inter, sans-serif" font-size="13" font-weight="700">93-94%</text>
+
+      <text x="480" y="476" text-anchor="middle" fill="#8895A7" font-family="Inter, sans-serif" font-size="11">Loss ratio (claims) + expense ratio (operaciones) = combined ratio. Cada AI initiative se mide contra su impacto aquí.</text>
+
+    </svg>
+  </div>
+  <span class="slide-number">6 / 9</span>
+</div>
+
+</body>
+</html>

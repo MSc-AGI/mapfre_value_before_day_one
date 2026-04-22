@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 8 - The Bridge</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #0F1A2E;
+  }
+
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2B7A9B, #3A9DBF);
+  }
+
+  .diagram-area {
+    width: 100%;
+    height: 540px;
+  }
+
+  .slide-number {
+    position: absolute;
+    bottom: 6px;
+    right: 12px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="diagram-area">
+    <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+      <defs>
+        <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+          <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/>
+        </filter>
+      </defs>
+
+      <!-- ══ TITLE ══ -->
+      <text x="60" y="52" fill="#fff" font-family="Playfair Display, Georgia, serif" font-size="32" font-weight="700">The Bridge: Integrando las Piezas</text>
+      <text x="60" y="78" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="15" font-style="italic">MAPFRE no tiene un problema de AI. Tiene un problema de bridge.</text>
+
+      <!-- ══ CARD 1: Group <> Local ══ -->
+      <rect x="40" y="100" width="880" height="82" rx="8" fill="#1A2744" filter="url(#sh)"/>
+      <rect x="40" y="100" width="6" height="82" rx="3" fill="#2B6CB0"/>
+
+      <text x="72" y="128" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700">Group</text>
+      <text x="142" y="128" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="18" font-weight="700">&#8596;</text>
+      <text x="166" y="128" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700">Local</text>
+
+      <text x="280" y="124" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="13">Entre el mandato global de Escrivá (accelerators replicables, compliance EU AI Act)</text>
+      <text x="280" y="144" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="13">y la ejecución operativa de IBERIA (combined ratio 93-94%, velocidad de mercado).</text>
+      <text x="280" y="166" fill="#8895A7" font-family="Inter, sans-serif" font-size="11" font-style="italic">Tensión: lo que funciona en España no siempre replica en 28 países, y viceversa.</text>
+
+      <!-- ══ CARD 2: Pilotos <> Producción ══ -->
+      <rect x="40" y="196" width="880" height="82" rx="8" fill="#1A2744" filter="url(#sh)"/>
+      <rect x="40" y="196" width="6" height="82" rx="3" fill="#38A169"/>
+
+      <text x="72" y="224" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700">Pilotos</text>
+      <text x="152" y="224" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="18" font-weight="700">&#8596;</text>
+      <text x="176" y="224" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700">Producción</text>
+
+      <text x="280" y="220" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="13">Entre 150+ use cases fragmentados y un portfolio escalado con framework</text>
+      <text x="280" y="240" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="13">kill/scale/redesign vinculado a P&L impact y combined ratio.</text>
+      <text x="280" y="262" fill="#8895A7" font-family="Inter, sans-serif" font-size="11" font-style="italic">Tensión: matar pilotos con sponsor interno genera fricción política.</text>
+
+      <!-- ══ CARD 3: Aspiración <> Compliance ══ -->
+      <rect x="40" y="292" width="880" height="82" rx="8" fill="#1A2744" filter="url(#sh)"/>
+      <rect x="40" y="292" width="6" height="82" rx="3" fill="#D69E2E"/>
+
+      <text x="72" y="320" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700">Aspiración</text>
+      <text x="172" y="320" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="18" font-weight="700">&#8596;</text>
+      <text x="196" y="320" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700">Compliance</text>
+
+      <text x="280" y="316" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="13">Entre el AI Manifesto humanista (primera IBEX 35) y los requisitos concretos</text>
+      <text x="280" y="336" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="13">de EU AI Act high-risk classification + EIOPA governance framework.</text>
+      <text x="280" y="358" fill="#8895A7" font-family="Inter, sans-serif" font-size="11" font-style="italic">Tensión: el manifesto es aspiracional, la regulación es binaria (cumples o no).</text>
+
+      <!-- ══ CARD 4: Velocidad <> Rigor ══ -->
+      <rect x="40" y="388" width="880" height="82" rx="8" fill="#1A2744" filter="url(#sh)"/>
+      <rect x="40" y="388" width="6" height="82" rx="3" fill="#805AD5"/>
+
+      <text x="72" y="416" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700">Velocidad</text>
+      <text x="168" y="416" fill="#3A9DBF" font-family="Inter, sans-serif" font-size="18" font-weight="700">&#8596;</text>
+      <text x="192" y="416" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700">Rigor</text>
+
+      <text x="280" y="412" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="13">Entre la demanda de time-to-market ("start small, think big, move fast")</text>
+      <text x="280" y="432" fill="#E2E6EB" font-family="Inter, sans-serif" font-size="13">y la exigencia de medir retorno de cada use case con ROI estandarizado.</text>
+      <text x="280" y="454" fill="#8895A7" font-family="Inter, sans-serif" font-size="11" font-style="italic">Tensión: el mantra de Ubaldo es velocidad, pero el Board pide números.</text>
+
+      <!-- ══ FOOTER ══ -->
+      <rect x="0" y="492" width="960" height="48" fill="rgba(15,26,46,0.95)"/>
+      <text x="40" y="521" fill="#8895A7" font-family="Inter, sans-serif" font-size="12">Marcelo Caballero</text>
+      <text x="200" y="521" fill="#4A5568" font-family="Inter, sans-serif" font-size="12">|</text>
+      <text x="216" y="521" fill="#8895A7" font-family="Inter, sans-serif" font-size="12">MSc AI (1.0)</text>
+      <text x="330" y="521" fill="#4A5568" font-family="Inter, sans-serif" font-size="12">|</text>
+      <text x="346" y="521" fill="#8895A7" font-family="Inter, sans-serif" font-size="12">McKinsey · Swiss Re · Allianz · Vorwerk (Extended Warranty)</text>
+      <text x="770" y="521" fill="#4A5568" font-family="Inter, sans-serif" font-size="12">|</text>
+      <text x="786" y="521" fill="#8895A7" font-family="Inter, sans-serif" font-size="12">ES · EN · DE</text>
+
+    </svg>
+  </div>
+  <span class="slide-number">8 / 9</span>
+</div>
+
+</body>
+</html>

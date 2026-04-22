@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact Summary - El Resultado</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #0F1A2E;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+    <defs>
+      <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+        <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+      </filter>
+    </defs>
+
+    <!-- Background -->
+    <rect width="960" height="540" fill="#0F1A2E"/>
+    <rect x="0" y="0" width="960" height="4" fill="#3A9DBF"/>
+
+    <!-- TITLE -->
+    <text x="40" y="42" fill="#fff" font-family="Georgia, serif" font-size="26" font-weight="bold">El Resultado: Antes y Después</text>
+    <text x="40" y="66" fill="#3A9DBF" font-family="sans-serif" font-size="13" font-style="italic">12 meses de trabajo conjunto. Qué cambia para Ubaldo, para IBERIA, para Group.</text>
+
+    <!-- ══ BEFORE / AFTER: 3 ROWS ══ -->
+
+    <!-- Row headers -->
+    <rect x="40" y="86" width="420" height="26" rx="4" fill="#C53030" opacity="0.2"/>
+    <text x="250" y="104" text-anchor="middle" fill="#C53030" font-family="sans-serif" font-size="12" font-weight="bold">HOY</text>
+
+    <rect x="500" y="86" width="425" height="26" rx="4" fill="#38A169" opacity="0.2"/>
+    <text x="712" y="104" text-anchor="middle" fill="#38A169" font-family="sans-serif" font-size="12" font-weight="bold">DESPUÉS (12 MESES)</text>
+
+    <!-- Arrow between columns -->
+    <polygon points="468,92 468,106 488,99" fill="#D69E2E"/>
+
+    <!-- ══ ROW 1: Combined Ratio ══ -->
+    <rect x="40" y="120" width="420" height="72" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="120" width="4" height="72" rx="2" fill="#C53030"/>
+    <text x="55" y="140" fill="#C53030" font-family="sans-serif" font-size="11" font-weight="bold">COMBINED RATIO</text>
+    <text x="55" y="162" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">95.8%</text>
+    <text x="145" y="162" fill="#8895A7" font-family="sans-serif" font-size="12">IBERIA vs 92.2% Grupo</text>
+    <text x="55" y="182" fill="#FED7D7" font-family="sans-serif" font-size="11">Gap 2.6pp sin atribución AI</text>
+
+    <rect x="500" y="120" width="425" height="72" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="500" y="120" width="4" height="72" rx="2" fill="#38A169"/>
+    <text x="515" y="140" fill="#38A169" font-family="sans-serif" font-size="11" font-weight="bold">COMBINED RATIO</text>
+    <text x="515" y="162" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">~93.9%</text>
+    <text x="622" y="162" fill="#8895A7" font-family="sans-serif" font-size="12">Target con AI portfolio escalado</text>
+    <text x="515" y="182" fill="#C6F6D5" font-family="sans-serif" font-size="11">-1.9pp atribuibles a use cases AI medidos</text>
+
+    <!-- ══ ROW 2: AI Portfolio ══ -->
+    <rect x="40" y="202" width="420" height="72" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="202" width="4" height="72" rx="2" fill="#C53030"/>
+    <text x="55" y="222" fill="#C53030" font-family="sans-serif" font-size="11" font-weight="bold">AI PORTFOLIO</text>
+    <text x="55" y="244" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">150+</text>
+    <text x="120" y="244" fill="#8895A7" font-family="sans-serif" font-size="12">pilotos fragmentados</text>
+    <text x="55" y="264" fill="#FED7D7" font-family="sans-serif" font-size="11">Sin framework kill/scale. Sin baseline. Sin ROI.</text>
+
+    <rect x="500" y="202" width="425" height="72" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="500" y="202" width="4" height="72" rx="2" fill="#38A169"/>
+    <text x="515" y="222" fill="#38A169" font-family="sans-serif" font-size="11" font-weight="bold">AI PORTFOLIO</text>
+    <text x="515" y="244" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">30-40</text>
+    <text x="610" y="244" fill="#8895A7" font-family="sans-serif" font-size="12">use cases en producción escalada</text>
+    <text x="515" y="264" fill="#C6F6D5" font-family="sans-serif" font-size="11">Con ROI medido, baseline documentado, P&amp;L tracked</text>
+
+    <!-- ══ ROW 3: Governance + Compliance ══ -->
+    <rect x="40" y="284" width="420" height="72" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="284" width="4" height="72" rx="2" fill="#C53030"/>
+    <text x="55" y="304" fill="#C53030" font-family="sans-serif" font-size="11" font-weight="bold">GOVERNANCE + COMPLIANCE</text>
+    <text x="55" y="324" fill="white" font-family="sans-serif" font-size="15" font-weight="bold">Ad hoc</text>
+    <text x="130" y="324" fill="#8895A7" font-family="sans-serif" font-size="12">Todo pasa por Ubaldo</text>
+    <text x="55" y="346" fill="#FED7D7" font-family="sans-serif" font-size="11">EU AI Act sin clasificar. Sin governance matrix.</text>
+
+    <rect x="500" y="284" width="425" height="72" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="500" y="284" width="4" height="72" rx="2" fill="#38A169"/>
+    <text x="515" y="304" fill="#38A169" font-family="sans-serif" font-size="11" font-weight="bold">GOVERNANCE + COMPLIANCE</text>
+    <text x="515" y="324" fill="white" font-family="sans-serif" font-size="15" font-weight="bold">Sistematizado</text>
+    <text x="640" y="324" fill="#8895A7" font-family="sans-serif" font-size="12">Carriles definidos</text>
+    <text x="515" y="346" fill="#C6F6D5" font-family="sans-serif" font-size="11">EU AI Act ready. Governance matrix. RACI operativo.</text>
+
+    <!-- ══ BOTTOM: What Ubaldo gets ══ -->
+    <rect x="40" y="372" width="885" height="82" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="372" width="885" height="4" rx="2" fill="#D69E2E"/>
+    <text x="55" y="394" fill="#D69E2E" font-family="sans-serif" font-size="13" font-weight="bold">QUÉ GANA UBALDO PERSONALMENTE</text>
+
+    <!-- 3 value props in a row -->
+    <rect x="55" y="404" width="270" height="40" rx="4" fill="#b7791f" opacity="0.12" stroke="#D69E2E" stroke-width="1"/>
+    <text x="190" y="420" text-anchor="middle" fill="#FEFCBF" font-family="sans-serif" font-size="12" font-weight="bold">Narrativa con números</text>
+    <text x="190" y="436" text-anchor="middle" fill="#E2E6EB" font-family="sans-serif" font-size="10">Puede reportar a Sanz Y a Escrivá</text>
+
+    <rect x="340" y="404" width="270" height="40" rx="4" fill="#b7791f" opacity="0.12" stroke="#D69E2E" stroke-width="1"/>
+    <text x="475" y="420" text-anchor="middle" fill="#FEFCBF" font-family="sans-serif" font-size="12" font-weight="bold">Ancho de banda liberado</text>
+    <text x="475" y="436" text-anchor="middle" fill="#E2E6EB" font-family="sans-serif" font-size="10">Governance matrix reduce el ad hoc</text>
+
+    <rect x="625" y="404" width="285" height="40" rx="4" fill="#b7791f" opacity="0.12" stroke="#D69E2E" stroke-width="1"/>
+    <text x="767" y="420" text-anchor="middle" fill="#FEFCBF" font-family="sans-serif" font-size="12" font-weight="bold">Posición fortalecida</text>
+    <text x="767" y="436" text-anchor="middle" fill="#E2E6EB" font-family="sans-serif" font-size="10">De "bridge informal" a "CDO con resultados"</text>
+
+    <!-- ══ CLOSING LINE ══ -->
+    <rect x="40" y="462" width="885" height="34" rx="6" fill="#3A9DBF" opacity="0.1" stroke="#3A9DBF" stroke-width="1"/>
+    <text x="482" y="484" text-anchor="middle" fill="#3A9DBF" font-family="sans-serif" font-size="14" font-weight="bold">Todo esto construido desde market research. Con datos internos, la precisión se multiplica.</text>
+
+    <!-- ══ FOOTER ══ -->
+    <rect x="0" y="502" width="960" height="38" fill="rgba(15,26,46,0.95)"/>
+    <text x="40" y="525" fill="#8895A7" font-family="sans-serif" font-size="10">Marcelo Caballero</text>
+    <text x="160" y="525" fill="#4A5568" font-family="sans-serif" font-size="10">|</text>
+    <text x="172" y="525" fill="#8895A7" font-family="sans-serif" font-size="10">Advisory Proposal for CDO MAPFRE Espa&#241;a</text>
+    <text x="920" y="525" text-anchor="end" fill="#4A5568" font-family="sans-serif" font-size="10">22.04.2026</text>
+
+  </svg>
+</div>
+</body>
+</html>

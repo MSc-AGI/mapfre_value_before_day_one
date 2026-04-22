@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fase 2 - Operating Model Group vs Local</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .slide {
+    width: 960px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    background: #0F1A2E;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+    <defs>
+      <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+        <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+      </filter>
+    </defs>
+
+    <!-- Background -->
+    <rect width="960" height="540" fill="#0F1A2E"/>
+    <rect x="0" y="0" width="960" height="4" fill="#D69E2E"/>
+
+    <!-- TITLE -->
+    <text x="40" y="40" fill="#D69E2E" font-family="sans-serif" font-size="13" font-weight="bold">FASE 2  |  MESES 4-7</text>
+    <text x="40" y="68" fill="#fff" font-family="Georgia, serif" font-size="24" font-weight="bold">Operating Model: Reducir el Cuello de Botella</text>
+    <text x="40" y="90" fill="#8895A7" font-family="sans-serif" font-size="12" font-style="italic">Definir quién decide qué, para que no todo pase por Ubaldo</text>
+
+    <!-- ══ BEFORE / AFTER ══ -->
+
+    <!-- BEFORE box -->
+    <rect x="40" y="108" width="420" height="170" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="108" width="420" height="4" rx="2" fill="#C53030"/>
+    <text x="55" y="130" fill="#C53030" font-family="sans-serif" font-size="12" font-weight="bold">HOY: Todo pasa por Ubaldo</text>
+
+    <!-- Before diagram: all arrows converge to Ubaldo -->
+    <!-- Escrivá box -->
+    <rect x="55" y="144" width="110" height="32" rx="4" fill="#2b6cb0" opacity="0.6"/>
+    <text x="110" y="164" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="bold">Escrivá (Group)</text>
+
+    <!-- Sanz box -->
+    <rect x="55" y="184" width="110" height="32" rx="4" fill="#C53030" opacity="0.6"/>
+    <text x="110" y="204" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="bold">Sanz (IBERIA)</text>
+
+    <!-- Solanas box -->
+    <rect x="55" y="224" width="110" height="32" rx="4" fill="#805AD5" opacity="0.6"/>
+    <text x="110" y="244" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="bold">Solanas (CDO Grp)</text>
+
+    <!-- Arrows to Ubaldo -->
+    <line x1="165" y1="160" x2="230" y2="195" stroke="#C53030" stroke-width="1.5" opacity="0.6"/>
+    <line x1="165" y1="200" x2="230" y2="200" stroke="#C53030" stroke-width="1.5" opacity="0.6"/>
+    <line x1="165" y1="240" x2="230" y2="205" stroke="#C53030" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Ubaldo overloaded -->
+    <rect x="230" y="182" width="100" height="36" rx="6" fill="#b7791f" stroke="#C53030" stroke-width="2"/>
+    <text x="280" y="204" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="bold">UBALDO</text>
+
+    <!-- Arrows out from Ubaldo to decisions -->
+    <line x1="330" y1="195" x2="370" y2="160" stroke="#C53030" stroke-width="1.5" opacity="0.6"/>
+    <line x1="330" y1="200" x2="370" y2="200" stroke="#C53030" stroke-width="1.5" opacity="0.6"/>
+    <line x1="330" y1="205" x2="370" y2="240" stroke="#C53030" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Decision items -->
+    <text x="375" y="164" fill="#FED7D7" font-family="sans-serif" font-size="9">Tech standards</text>
+    <text x="375" y="204" fill="#FED7D7" font-family="sans-serif" font-size="9">Use case approval</text>
+    <text x="375" y="244" fill="#FED7D7" font-family="sans-serif" font-size="9">Budget allocation</text>
+
+    <!-- Problem label -->
+    <text x="55" y="272" fill="#C53030" font-family="sans-serif" font-size="10" font-weight="bold">Resultado: Ubaldo es bottleneck. Cada decisión es ad hoc. No escala.</text>
+
+    <!-- Arrow between before/after -->
+    <polygon points="470,190 490,180 490,200" fill="#D69E2E"/>
+
+    <!-- AFTER box -->
+    <rect x="500" y="108" width="425" height="170" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="500" y="108" width="425" height="4" rx="2" fill="#38A169"/>
+    <text x="515" y="130" fill="#38A169" font-family="sans-serif" font-size="12" font-weight="bold">DESPUÉS: Carriles definidos</text>
+
+    <!-- Three lanes -->
+    <!-- Lane 1: Group decides -->
+    <rect x="515" y="142" width="395" height="36" rx="4" fill="#2b6cb0" opacity="0.15" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="525" y="164" fill="#BEE3F8" font-family="sans-serif" font-size="11" font-weight="bold">GROUP DECIDE:</text>
+    <text x="660" y="164" fill="#E2E6EB" font-family="sans-serif" font-size="11">Tech standards, AI policy, compliance framework</text>
+
+    <!-- Lane 2: Local decides -->
+    <rect x="515" y="184" width="395" height="36" rx="4" fill="#C53030" opacity="0.1" stroke="#C53030" stroke-width="1"/>
+    <text x="525" y="206" fill="#FED7D7" font-family="sans-serif" font-size="11" font-weight="bold">IBERIA DECIDE:</text>
+    <text x="665" y="206" fill="#E2E6EB" font-family="sans-serif" font-size="11">Use case prioritization, budget, local ops</text>
+
+    <!-- Lane 3: Ubaldo arbitrates -->
+    <rect x="515" y="226" width="395" height="36" rx="4" fill="#b7791f" opacity="0.2" stroke="#D69E2E" stroke-width="1"/>
+    <text x="525" y="248" fill="#FEFCBF" font-family="sans-serif" font-size="11" font-weight="bold">UBALDO ARBITRA:</text>
+    <text x="672" y="248" fill="#E2E6EB" font-family="sans-serif" font-size="11">Solo conflictos cross-domain + escalaciones</text>
+
+    <!-- Result label -->
+    <text x="515" y="274" fill="#38A169" font-family="sans-serif" font-size="10" font-weight="bold">Resultado: Ubaldo solo interviene donde realmente se necesita su criterio.</text>
+
+    <!-- ══ GOVERNANCE MATRIX ══ -->
+    <rect x="40" y="292" width="885" height="156" rx="6" fill="#1A2744" filter="url(#sh)"/>
+    <rect x="40" y="292" width="885" height="4" rx="2" fill="#D69E2E"/>
+    <text x="55" y="314" fill="#D69E2E" font-family="sans-serif" font-size="12" font-weight="bold">GOVERNANCE MATRIX: QUIÉN DECIDE QUÉ</text>
+
+    <!-- Table header -->
+    <rect x="55" y="326" width="855" height="22" rx="3" fill="#0F1A2E"/>
+    <text x="200" y="341" text-anchor="middle" fill="#8895A7" font-family="sans-serif" font-size="10" font-weight="bold">TIPO DE DECISIÓN</text>
+    <text x="430" y="341" text-anchor="middle" fill="#2b6cb0" font-family="sans-serif" font-size="10" font-weight="bold">GROUP (Escrivá)</text>
+    <text x="610" y="341" text-anchor="middle" fill="#C53030" font-family="sans-serif" font-size="10" font-weight="bold">IBERIA (Sanz)</text>
+    <text x="790" y="341" text-anchor="middle" fill="#D69E2E" font-family="sans-serif" font-size="10" font-weight="bold">UBALDO (Arbitraje)</text>
+
+    <!-- Row 1 -->
+    <text x="70" y="366" fill="#E2E6EB" font-family="sans-serif" font-size="11">Tech stack / plataforma</text>
+    <text x="430" y="366" text-anchor="middle" fill="#BEE3F8" font-family="sans-serif" font-size="12" font-weight="bold">DECIDE</text>
+    <text x="610" y="366" text-anchor="middle" fill="#8895A7" font-family="sans-serif" font-size="11">Consulta</text>
+    <text x="790" y="366" text-anchor="middle" fill="#8895A7" font-family="sans-serif" font-size="11">Implementa</text>
+
+    <!-- Row 2 -->
+    <rect x="55" y="374" width="855" height="22" rx="2" fill="#0F1A2E" opacity="0.3"/>
+    <text x="70" y="390" fill="#E2E6EB" font-family="sans-serif" font-size="11">Use case priorización</text>
+    <text x="430" y="390" text-anchor="middle" fill="#8895A7" font-family="sans-serif" font-size="11">Framework</text>
+    <text x="610" y="390" text-anchor="middle" fill="#FED7D7" font-family="sans-serif" font-size="12" font-weight="bold">DECIDE</text>
+    <text x="790" y="390" text-anchor="middle" fill="#8895A7" font-family="sans-serif" font-size="11">Recomienda</text>
+
+    <!-- Row 3 -->
+    <text x="70" y="414" fill="#E2E6EB" font-family="sans-serif" font-size="11">Budget asignación</text>
+    <text x="430" y="414" text-anchor="middle" fill="#8895A7" font-family="sans-serif" font-size="11">Techo global</text>
+    <text x="610" y="414" text-anchor="middle" fill="#FED7D7" font-family="sans-serif" font-size="12" font-weight="bold">DECIDE</text>
+    <text x="790" y="414" text-anchor="middle" fill="#8895A7" font-family="sans-serif" font-size="11">Propone</text>
+
+    <!-- Row 4 -->
+    <rect x="55" y="420" width="855" height="22" rx="2" fill="#0F1A2E" opacity="0.3"/>
+    <text x="70" y="436" fill="#E2E6EB" font-family="sans-serif" font-size="11">Cross-domain conflicts</text>
+    <text x="430" y="436" text-anchor="middle" fill="#8895A7" font-family="sans-serif" font-size="11">Escala si falla</text>
+    <text x="610" y="436" text-anchor="middle" fill="#8895A7" font-family="sans-serif" font-size="11">Escala si falla</text>
+    <text x="790" y="436" text-anchor="middle" fill="#FEFCBF" font-family="sans-serif" font-size="12" font-weight="bold">ARBITRA</text>
+
+    <!-- ══ BOTTOM: Milestone + WPs ══ -->
+    <rect x="40" y="456" width="500" height="40" rx="6" fill="#D69E2E" opacity="0.15" stroke="#D69E2E" stroke-width="1.5"/>
+    <text x="55" y="472" fill="#D69E2E" font-family="sans-serif" font-size="13" font-weight="bold">MILESTONE FIN FASE 2:</text>
+    <text x="268" y="472" fill="white" font-family="sans-serif" font-size="13">Governance Matrix aprobada</text>
+    <text x="268" y="490" fill="white" font-family="sans-serif" font-size="13">+ Decision Rights documentados</text>
+
+    <!-- WP summary -->
+    <rect x="560" y="456" width="365" height="40" rx="6" fill="#1A2744"/>
+    <text x="575" y="472" fill="#D69E2E" font-family="sans-serif" font-size="10" font-weight="bold">WP 2.1:</text>
+    <text x="625" y="472" fill="#E2E6EB" font-family="sans-serif" font-size="10">Decision rights mapping</text>
+    <text x="575" y="488" fill="#D69E2E" font-family="sans-serif" font-size="10" font-weight="bold">WP 2.2:</text>
+    <text x="625" y="488" fill="#E2E6EB" font-family="sans-serif" font-size="10">Escalation protocol + RACI matrix</text>
+
+    <!-- ══ FOOTER ══ -->
+    <rect x="0" y="502" width="960" height="38" fill="rgba(15,26,46,0.95)"/>
+    <text x="40" y="525" fill="#8895A7" font-family="sans-serif" font-size="10">Marcelo Caballero</text>
+    <text x="160" y="525" fill="#4A5568" font-family="sans-serif" font-size="10">|</text>
+    <text x="172" y="525" fill="#8895A7" font-family="sans-serif" font-size="10">Advisory Proposal for CDO MAPFRE Espa&#241;a</text>
+    <text x="920" y="525" text-anchor="end" fill="#4A5568" font-family="sans-serif" font-size="10">22.04.2026</text>
+
+  </svg>
+</div>
+</body>
+</html>
