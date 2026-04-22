@@ -693,6 +693,9 @@
       const iframe = document.createElement('iframe');
       iframe.src = slide.path;
       iframe.loading = 'lazy';
+      iframe.style.position = 'absolute';
+      iframe.style.top = '0';
+      iframe.style.left = '0';
       iframe.style.width = '960px';
       iframe.style.height = '540px';
       iframe.style.border = 'none';
@@ -700,8 +703,20 @@
       iframe.style.pointerEvents = 'none';
       container.appendChild(iframe);
 
+      // Override slide body CSS so .slide sits at top-left of iframe
+      // (slides use body{display:flex; padding:20px; min-height:100vh} to
+      // center themselves in viewport — incompatible with top-left scaling).
+      iframe.addEventListener('load', () => {
+        try {
+          const doc = iframe.contentDocument;
+          if (!doc) return;
+          const s = doc.createElement('style');
+          s.textContent = 'body{margin:0!important;padding:0!important;display:block!important;min-height:0!important;background:transparent!important}';
+          doc.head.appendChild(s);
+        } catch (e) {}
+      });
+
       // Recalculate scale when container has real width (after layout).
-      // Double rAF ensures styles and layout are settled.
       const applyScale = () => {
         const w = container.offsetWidth;
         if (w > 0) {
