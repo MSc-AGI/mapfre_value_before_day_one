@@ -755,6 +755,28 @@
     }
   }
 
+  // Inject CSS into viewer iframe to scale .slide to fit the viewer viewport
+  // while preserving 16:9 aspect ratio. Same-origin safe.
+  function applyViewerScale() {
+    const frame = document.getElementById('viewer-frame');
+    if (!frame || !frame.src) return;
+    try {
+      const doc = frame.contentDocument;
+      if (!doc || !doc.head) return;
+      const vw = frame.clientWidth || window.innerWidth;
+      const vh = frame.clientHeight || window.innerHeight;
+      if (vw <= 0 || vh <= 0) return;
+      const scale = Math.min(vw / 960, vh / 540);
+      let s = doc.querySelector('style[data-viewer-override]');
+      if (!s) {
+        s = doc.createElement('style');
+        s.setAttribute('data-viewer-override', '1');
+        doc.head.appendChild(s);
+      }
+      s.textContent = 'html,body{margin:0!important;padding:0!important;overflow:hidden!important;width:100%!important;height:100%!important}body{display:flex!important;justify-content:center!important;align-items:center!important;background:#1a1a2e!important;min-height:0!important}.slide{transform:scale(' + scale + ')!important;transform-origin:center center!important}';
+    } catch (e) {}
+  }
+
   // Viewer
   function openViewer(index) {
     currentSlide = index;
@@ -766,6 +788,13 @@
     viewer.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
+
+  // Attach viewer scaling once: fires on each iframe load (new slide) + resize
+  document.addEventListener('DOMContentLoaded', () => {
+    const f = document.getElementById('viewer-frame');
+    if (f) f.addEventListener('load', applyViewerScale);
+    window.addEventListener('resize', applyViewerScale);
+  });
 
   function closeViewer() {
     document.getElementById('viewer').classList.remove('active');
