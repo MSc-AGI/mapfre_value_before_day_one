@@ -693,15 +693,29 @@
       const iframe = document.createElement('iframe');
       iframe.src = slide.path;
       iframe.loading = 'lazy';
-      // Scale to fit card
-      const containerWidth = container.offsetWidth || 360;
-      const scale = containerWidth / 960;
-      iframe.style.transform = `scale(${scale})`;
       iframe.style.width = '960px';
       iframe.style.height = '540px';
+      iframe.style.border = 'none';
       iframe.style.transformOrigin = 'top left';
       iframe.style.pointerEvents = 'none';
       container.appendChild(iframe);
+
+      // Recalculate scale when container has real width (after layout).
+      // Double rAF ensures styles and layout are settled.
+      const applyScale = () => {
+        const w = container.offsetWidth;
+        if (w > 0) {
+          iframe.style.transform = `scale(${w / 960})`;
+        }
+      };
+      requestAnimationFrame(() => requestAnimationFrame(applyScale));
+
+      // Re-apply on container or window resize
+      if (window.ResizeObserver) {
+        new ResizeObserver(applyScale).observe(container);
+      } else {
+        window.addEventListener('resize', applyScale);
+      }
     });
   }
 
