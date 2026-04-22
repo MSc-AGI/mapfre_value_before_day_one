@@ -685,14 +685,38 @@
 
   let currentSlide = 0;
 
+  // Apply scale to every thumbnail iframe based on its container size.
+  function applyAllThumbnailScales() {
+    document.querySelectorAll('.slide-preview').forEach(container => {
+      const iframe = container.querySelector('iframe');
+      if (!iframe) return;
+      const w = container.offsetWidth;
+      if (w > 0) iframe.style.transform = `scale(${w / 960})`;
+    });
+  }
+
+  // Inject CSS override into thumbnail iframe (same-origin) to neutralize
+  // the slide body's flex-centering + padding so .slide anchors at (0,0).
+  function injectThumbOverride(iframe) {
+    try {
+      const doc = iframe.contentDocument;
+      if (!doc || !doc.head) return;
+      if (doc.querySelector('style[data-thumb-override]')) return; // idempotent
+      const s = doc.createElement('style');
+      s.setAttribute('data-thumb-override', '1');
+      s.textContent = 'body{margin:0!important;padding:0!important;display:block!important;min-height:0!important;background:transparent!important}';
+      doc.head.appendChild(s);
+    } catch (e) {}
+  }
+
   // Load thumbnail previews
   function loadPreviews() {
     slides.forEach((slide, i) => {
       const container = document.getElementById(`preview-${i}`);
       if (!container) return;
       const iframe = document.createElement('iframe');
-      iframe.src = slide.path;
-      iframe.loading = 'lazy';
+
+      // Style iframe FIRST (before src/append) to avoid any race with load.
       iframe.style.position = 'absolute';
       iframe.style.top = '0';
       iframe.style.left = '0';
@@ -701,37 +725,34 @@
       iframe.style.border = 'none';
       iframe.style.transformOrigin = 'top left';
       iframe.style.pointerEvents = 'none';
+
+      // Attach load handler BEFORE setting src (cached iframes fire load fast).
+      iframe.addEventListener('load', () => injectThumbOverride(iframe));
+
+      iframe.src = slide.path;
       container.appendChild(iframe);
 
-      // Override slide body CSS so .slide sits at top-left of iframe
-      // (slides use body{display:flex; padding:20px; min-height:100vh} to
-      // center themselves in viewport — incompatible with top-left scaling).
-      iframe.addEventListener('load', () => {
-        try {
-          const doc = iframe.contentDocument;
-          if (!doc) return;
-          const s = doc.createElement('style');
-          s.textContent = 'body{margin:0!important;padding:0!important;display:block!important;min-height:0!important;background:transparent!important}';
-          doc.head.appendChild(s);
-        } catch (e) {}
-      });
-
-      // Recalculate scale when container has real width (after layout).
-      const applyScale = () => {
-        const w = container.offsetWidth;
-        if (w > 0) {
-          iframe.style.transform = `scale(${w / 960})`;
-        }
-      };
-      requestAnimationFrame(() => requestAnimationFrame(applyScale));
-
-      // Re-apply on container or window resize
-      if (window.ResizeObserver) {
-        new ResizeObserver(applyScale).observe(container);
-      } else {
-        window.addEventListener('resize', applyScale);
+      // Fallback for already-loaded (cached) iframes.
+      if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+        injectThumbOverride(iframe);
       }
     });
+
+    // Apply scales across multiple triggers (belt-and-suspenders):
+    // 1) Immediate after DOM mutation (may be too early)
+    // 2) Double rAF after layout settles
+    // 3) setTimeout fallbacks for slow layouts
+    // 4) window resize + ResizeObserver for responsive behavior
+    applyAllThumbnailScales();
+    requestAnimationFrame(() => requestAnimationFrame(applyAllThumbnailScales));
+    setTimeout(applyAllThumbnailScales, 100);
+    setTimeout(applyAllThumbnailScales, 500);
+
+    window.addEventListener('resize', applyAllThumbnailScales);
+    if (window.ResizeObserver) {
+      const ro = new ResizeObserver(applyAllThumbnailScales);
+      document.querySelectorAll('.slide-preview').forEach(c => ro.observe(c));
+    }
   }
 
   // Viewer
