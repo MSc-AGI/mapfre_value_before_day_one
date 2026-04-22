@@ -212,14 +212,14 @@
     width: 100%;
     aspect-ratio: 16/9;
     background: var(--bg-card);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
     position: relative;
   }
 
   .slide-preview iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 960px;
     height: 540px;
     border: none;
